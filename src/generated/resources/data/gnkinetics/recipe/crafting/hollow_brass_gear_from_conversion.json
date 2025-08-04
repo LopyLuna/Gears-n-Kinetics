@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gnkinetics:shaftless_brass_gear"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnkinetics:hollow_brass_gear"
+  }
+}

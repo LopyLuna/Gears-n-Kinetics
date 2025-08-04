@@ -1,0 +1,6 @@
+{
+	"parent": "gnkinetics:block/ring_gear/ring_gear",
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "gnkinetics:models/block/ring_gear/ring_gear.obj"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "create:shaft"
+    },
+    {
+      "tag": "c:nuggets/brass"
+    },
+    {
+      "tag": "c:nuggets/brass"
+    },
+    {
+      "tag": "c:nuggets/brass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnkinetics:tiny_brass_gear"
+  }
+}

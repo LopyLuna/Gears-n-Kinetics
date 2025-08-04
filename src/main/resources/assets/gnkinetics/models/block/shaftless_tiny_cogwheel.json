@@ -1,0 +1,62 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "create:block/large_wheels",
+	"render_type": "minecraft:cutout",
+	"texture_size": [32, 32],
+	"textures": {
+		"2": "gnkinetics:block/cogwheel",
+		"particle": "create:block/andesite_casing"
+	},
+	"elements": [
+		{
+			"name": "GearCaseInner",
+			"from": [4.5625, 5.05, 4.4375],
+			"to": [11.6875, 10.95, 11.5625],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8.125, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 6.5, 3.5, 9.5], "texture": "#2"},
+				"east": {"uv": [0, 6.5, 3.5, 9.5], "texture": "#2"},
+				"south": {"uv": [0, 6.5, 3.5, 9.5], "texture": "#2"},
+				"west": {"uv": [0, 6.5, 3.5, 9.5], "texture": "#2"},
+				"up": {"uv": [0, 0, 3.5, 3.5], "texture": "#2"},
+				"down": {"uv": [0, 0, 3.5, 3.5], "texture": "#2"}
+			}
+		},
+		{
+			"name": "GearCaseInner",
+			"from": [5.5625, 5.05, 5.4375],
+			"to": [10.6875, 10.95, 10.5625],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8.125, 8, 8]},
+			"faces": {
+				"north": {"uv": [0.5, 3.5, 3, 6.5], "texture": "#2"},
+				"east": {"uv": [0.5, 3.5, 3, 6.5], "texture": "#2"},
+				"south": {"uv": [0.5, 3.5, 3, 6.5], "texture": "#2"},
+				"west": {"uv": [0.5, 3.5, 3, 6.5], "texture": "#2"}
+			}
+		},
+		{
+			"name": "GearCaseInner",
+			"from": [4.625, 10.8625, 4.5],
+			"to": [11.625, 5.1375, 11.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8.125, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 3.5, 3.5, 6.5], "texture": "#2"},
+				"east": {"uv": [0, 3.5, 3.5, 6.5], "texture": "#2"},
+				"south": {"uv": [0, 3.5, 3.5, 6.5], "texture": "#2"},
+				"west": {"uv": [0, 3.5, 3.5, 6.5], "texture": "#2"},
+				"up": {"uv": [0, 0, 3.5, 3.5], "texture": "#2"},
+				"down": {"uv": [0, 0, 3.5, 3.5], "texture": "#2"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "gear",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1]
+		},
+		2
+	]
+}

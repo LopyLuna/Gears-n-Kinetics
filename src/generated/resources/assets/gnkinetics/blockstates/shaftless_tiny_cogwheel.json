@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "gnkinetics:block/shaftless_tiny_cogwheel",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "gnkinetics:block/shaftless_tiny_cogwheel"
+    },
+    "axis=z": {
+      "model": "gnkinetics:block/shaftless_tiny_cogwheel",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

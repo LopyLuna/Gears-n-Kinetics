@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.lopyluna.gnkinetics.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "KineticBlockEntityMixin",
+    "PlacementClientMixin",
+    "RotationPropagatorAccessor",
+    "RotationPropagatorMixin",
+    "ShaftBlockPlacementHelperMixin",
+    "remappings.BlockMixin",
+    "remappings.BlockStateBaseMixin",
+    "remappings.BuildCreativeModeTabContentsEventMixin",
+    "remappings.ItemMixin",
+    "remappings.ItemStackMixin",
+    "remappings.LevelChunkSectionMixin",
+    "remappings.LevelMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

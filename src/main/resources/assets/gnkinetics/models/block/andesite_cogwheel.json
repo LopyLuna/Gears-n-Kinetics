@@ -1,0 +1,127 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "create:block/large_wheels",
+	"texture_size": [32, 32],
+	"textures": {
+		"3": "gnkinetics:block/cog_stone",
+		"4": "create:block/axis_top",
+		"5": "create:block/millstone",
+		"6": "create:block/cogwheel_axis",
+		"particle": "create:block/palettes/stone_types/cut/andesite_cut"
+	},
+	"elements": [
+		{
+			"name": "Gear5",
+			"from": [6.5, 5, -1],
+			"to": [9.5, 11, 17],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [9, 10, 10.5, 13], "texture": "#5"},
+				"east": {"uv": [0, 10, 9, 13], "texture": "#5"},
+				"south": {"uv": [9, 10, 10.5, 13], "texture": "#5"},
+				"west": {"uv": [0, 10, 9, 13], "texture": "#5"},
+				"up": {"uv": [0, 8.5, 9, 10], "rotation": 90, "texture": "#5"},
+				"down": {"uv": [0, 8.5, 9, 10], "rotation": 90, "texture": "#5"}
+			}
+		},
+		{
+			"name": "Gear6",
+			"from": [6.5, 5, -1],
+			"to": [9.5, 11, 17],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 6.5, 8]},
+			"faces": {
+				"north": {"uv": [9, 10, 10.5, 13], "texture": "#5"},
+				"east": {"uv": [0, 10, 9, 13], "texture": "#5"},
+				"south": {"uv": [9, 10, 10.5, 13], "texture": "#5"},
+				"west": {"uv": [0, 10, 9, 13], "texture": "#5"},
+				"up": {"uv": [0, 8.5, 9, 10], "rotation": 90, "texture": "#5"},
+				"down": {"uv": [0, 8.5, 9, 10], "rotation": 90, "texture": "#5"}
+			}
+		},
+		{
+			"name": "Gear7",
+			"from": [-1, 5, 6.5],
+			"to": [17, 11, 9.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 6.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 10, 9, 13], "texture": "#5"},
+				"east": {"uv": [9, 10, 10.5, 13], "texture": "#5"},
+				"south": {"uv": [0, 10, 9, 13], "texture": "#5"},
+				"west": {"uv": [9, 10, 10.5, 13], "texture": "#5"},
+				"up": {"uv": [0, 8.5, 9, 10], "texture": "#5"},
+				"down": {"uv": [0, 8.5, 9, 10], "rotation": 180, "texture": "#5"}
+			}
+		},
+		{
+			"name": "Gear7",
+			"from": [-1, 5, 6.5],
+			"to": [17, 11, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 10, 9, 13], "texture": "#5"},
+				"east": {"uv": [9, 10, 10.5, 13], "texture": "#5"},
+				"south": {"uv": [0, 10, 9, 13], "texture": "#5"},
+				"west": {"uv": [9, 10, 10.5, 13], "texture": "#5"},
+				"up": {"uv": [0, 8.5, 9, 10], "texture": "#5"},
+				"down": {"uv": [0, 8.5, 9, 10], "rotation": 180, "texture": "#5"}
+			}
+		},
+		{
+			"name": "GearCaseInner",
+			"from": [2, 5.5, 2],
+			"to": [14, 10.5, 14],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 7, 8]},
+			"faces": {
+				"north": {"uv": [0, 6, 6, 8.5], "texture": "#5"},
+				"east": {"uv": [0, 6, 6, 8.5], "texture": "#5"},
+				"south": {"uv": [0, 6, 6, 8.5], "texture": "#5"},
+				"west": {"uv": [0, 6, 6, 8.5], "texture": "#5"},
+				"up": {"uv": [0, 0, 6, 6], "rotation": 90, "texture": "#5"},
+				"down": {"uv": [0, 0, 6, 6], "rotation": 270, "texture": "#5"}
+			}
+		},
+		{
+			"name": "GearCaseInner",
+			"from": [3, 4, 3],
+			"to": [13, 12, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 6, 8]},
+			"faces": {
+				"north": {"uv": [11, 5, 16, 8.5], "texture": "#3"},
+				"east": {"uv": [11, 5, 16, 8.5], "texture": "#3"},
+				"south": {"uv": [11, 5, 16, 8.5], "texture": "#3"},
+				"west": {"uv": [11, 5, 16, 8.5], "texture": "#3"},
+				"up": {"uv": [11, 0, 16, 5], "texture": "#3"},
+				"down": {"uv": [11, 0, 16, 5], "texture": "#3"}
+			}
+		},
+		{
+			"name": "Axis",
+			"from": [6, 0, 6],
+			"to": [10, 16, 10],
+			"faces": {
+				"north": {"uv": [6, 0, 10, 16], "texture": "#6"},
+				"east": {"uv": [6, 0, 10, 16], "texture": "#6"},
+				"south": {"uv": [6, 0, 10, 16], "texture": "#6"},
+				"west": {"uv": [6, 0, 10, 16], "texture": "#6"},
+				"up": {"uv": [6, 6, 10, 10], "texture": "#4"},
+				"down": {"uv": [6, 6, 10, 10], "texture": "#4"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "cogwheel",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5]
+		},
+		{
+			"name": "shaft_half",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": []
+		},
+		6
+	]
+}

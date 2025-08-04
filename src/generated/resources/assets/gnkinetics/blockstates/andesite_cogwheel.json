@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "axis=x,has_shaft=false": {
+      "model": "gnkinetics:block/andesite_cogwheel",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,has_shaft=true": {
+      "model": "gnkinetics:block/andesite_cogwheel",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,has_shaft=false": {
+      "model": "gnkinetics:block/andesite_cogwheel"
+    },
+    "axis=y,has_shaft=true": {
+      "model": "gnkinetics:block/andesite_cogwheel"
+    },
+    "axis=z,has_shaft=false": {
+      "model": "gnkinetics:block/andesite_cogwheel",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,has_shaft=true": {
+      "model": "gnkinetics:block/andesite_cogwheel",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

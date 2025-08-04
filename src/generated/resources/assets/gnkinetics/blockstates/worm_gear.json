@@ -1,0 +1,108 @@
+{
+  "variants": {
+    "facing=down,part=end": {
+      "model": "gnkinetics:block/worm_gear_end_flipped",
+      "x": 180
+    },
+    "facing=down,part=middle": {
+      "model": "gnkinetics:block/worm_gear_middle_flipped",
+      "x": 180
+    },
+    "facing=down,part=single": {
+      "model": "gnkinetics:block/worm_gear_single_flipped",
+      "x": 180
+    },
+    "facing=down,part=start": {
+      "model": "gnkinetics:block/worm_gear_start_flipped",
+      "x": 180
+    },
+    "facing=east,part=end": {
+      "model": "gnkinetics:block/worm_gear/block_end",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,part=middle": {
+      "model": "gnkinetics:block/worm_gear/block_middle",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,part=single": {
+      "model": "gnkinetics:block/worm_gear/block_single",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,part=start": {
+      "model": "gnkinetics:block/worm_gear/block_start",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,part=end": {
+      "model": "gnkinetics:block/worm_gear_end_flipped",
+      "x": 90
+    },
+    "facing=north,part=middle": {
+      "model": "gnkinetics:block/worm_gear_middle_flipped",
+      "x": 90
+    },
+    "facing=north,part=single": {
+      "model": "gnkinetics:block/worm_gear_single_flipped",
+      "x": 90
+    },
+    "facing=north,part=start": {
+      "model": "gnkinetics:block/worm_gear_start_flipped",
+      "x": 90
+    },
+    "facing=south,part=end": {
+      "model": "gnkinetics:block/worm_gear/block_end",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,part=middle": {
+      "model": "gnkinetics:block/worm_gear/block_middle",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,part=single": {
+      "model": "gnkinetics:block/worm_gear/block_single",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,part=start": {
+      "model": "gnkinetics:block/worm_gear/block_start",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,part=end": {
+      "model": "gnkinetics:block/worm_gear/block_end"
+    },
+    "facing=up,part=middle": {
+      "model": "gnkinetics:block/worm_gear/block_middle"
+    },
+    "facing=up,part=single": {
+      "model": "gnkinetics:block/worm_gear/block_single"
+    },
+    "facing=up,part=start": {
+      "model": "gnkinetics:block/worm_gear/block_start"
+    },
+    "facing=west,part=end": {
+      "model": "gnkinetics:block/worm_gear_end_flipped",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,part=middle": {
+      "model": "gnkinetics:block/worm_gear_middle_flipped",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,part=single": {
+      "model": "gnkinetics:block/worm_gear_single_flipped",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,part=start": {
+      "model": "gnkinetics:block/worm_gear_start_flipped",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

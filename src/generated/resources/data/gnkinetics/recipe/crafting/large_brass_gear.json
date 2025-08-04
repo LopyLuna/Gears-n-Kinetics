@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "create:shaft"
+    },
+    {
+      "tag": "c:ingots/brass"
+    },
+    {
+      "tag": "c:ingots/brass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnkinetics:large_brass_gear"
+  }
+}

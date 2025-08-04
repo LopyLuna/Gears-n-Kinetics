@@ -1,0 +1,6 @@
+{
+  "parent": "gnkinetics:block/worm_gear/block_end",
+  "textures": {
+    "2": "gnkinetics:block/worm_gear_flipped"
+  }
+}

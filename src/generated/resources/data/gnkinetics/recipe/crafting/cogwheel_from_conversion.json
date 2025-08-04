@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gnkinetics:hollow_cogwheel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:cogwheel"
+  }
+}

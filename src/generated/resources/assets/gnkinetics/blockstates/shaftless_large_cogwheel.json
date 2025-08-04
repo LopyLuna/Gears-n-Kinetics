@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "axis=x,has_shaft=false": {
+      "model": "create:block/large_cogwheel_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,has_shaft=true": {
+      "model": "create:block/large_cogwheel_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,has_shaft=false": {
+      "model": "create:block/large_cogwheel_shaftless"
+    },
+    "axis=y,has_shaft=true": {
+      "model": "create:block/large_cogwheel_shaftless"
+    },
+    "axis=z,has_shaft=false": {
+      "model": "create:block/large_cogwheel_shaftless",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,has_shaft=true": {
+      "model": "create:block/large_cogwheel_shaftless",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

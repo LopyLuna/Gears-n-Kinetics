@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "gnkinetics:block/creative_gear_motor/block",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "gnkinetics:block/creative_gear_motor/block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gnkinetics:block/creative_gear_motor/block",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "gnkinetics:block/creative_gear_motor/block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "gnkinetics:block/creative_gear_motor/block"
+    },
+    "facing=west": {
+      "model": "gnkinetics:block/creative_gear_motor/block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gnkinetics:andesite_cogwheel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnkinetics:shaftless_andesite_cogwheel"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gnkinetics:large_industrial_gear"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnkinetics:shaftless_large_industrial_gear"
+  }
+}

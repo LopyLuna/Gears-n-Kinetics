@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "create:andesite_alloy"
+    },
+    "i": {
+      "tag": "c:plates/iron"
+    }
+  },
+  "pattern": [
+    "a",
+    "i",
+    "a"
+  ],
+  "result": {
+    "count": 8,
+    "id": "gnkinetics:worm_gear"
+  }
+}

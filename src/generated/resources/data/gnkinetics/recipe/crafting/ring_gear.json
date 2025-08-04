@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:ingots/brass"
+    },
+    "g": {
+      "item": "gnkinetics:hollow_large_brass_gear"
+    }
+  },
+  "pattern": [
+    "bbb",
+    "bgb",
+    "bbb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnkinetics:ring_gear"
+  }
+}
