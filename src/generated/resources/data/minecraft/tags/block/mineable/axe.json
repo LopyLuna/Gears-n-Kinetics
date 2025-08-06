@@ -1,5 +1,6 @@
 {
   "values": [
+    "gnkinetics:chainable_cogwheel",
     "gnkinetics:cog_crank",
     "gnkinetics:large_cog_crank",
     "gnkinetics:tiny_cogwheel",

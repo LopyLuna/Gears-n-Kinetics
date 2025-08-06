@@ -18,6 +18,7 @@ import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import dev.lopyluna.gnkinetics.Gears;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.ChainableCogwheelBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankItem;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.creative_gear_motor.CreativeGearMotorBlock;
@@ -67,6 +68,17 @@ public class GearsBlocks {
             .onRegister(BlockStressValues.setGeneratorSpeed(256, true))
             .item()
             .properties(p -> p.rarity(Rarity.EPIC))
+            .transform(customItemModel())
+            .register();
+
+    public static final BlockEntry<ChainableCogwheelBlock> CHAINABLE_COGWHEEL = REG.block("chainable_cogwheel", ChainableCogwheelBlock::new)
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.noOcclusion().sound(SoundType.WOOD).mapColor(MapColor.DIRT))
+            .transform(axeOrPickaxe())
+            .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, s -> AssetLookup.partialBaseModel(c, p)))
+            .addLayer(() -> RenderType::cutoutMipped)
+            .transform(GStress.setNoImpact())
+            .item()
             .transform(customItemModel())
             .register();
 

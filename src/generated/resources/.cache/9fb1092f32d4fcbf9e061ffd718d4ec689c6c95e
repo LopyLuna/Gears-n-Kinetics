@@ -1,8 +1,10 @@
-// 1.21.1	2025-08-04T04:23:51.6010516	Recipes
+// 1.21.1	2025-08-06T12:32:01.2969324	Recipes
 18d9f629ee0361b415ab0c859f5a8b8474f4cb4a data/gnkinetics/advancement/recipes/misc/crafting/andesite_cogwheel.json
 bf767d4c7682c6799d2c6206ae685f8db0a5e3df data/gnkinetics/advancement/recipes/misc/crafting/andesite_cogwheel_from_conversion.json
 4d254f2c789aba803c0d9ebda270aaad9718cc4e data/gnkinetics/advancement/recipes/misc/crafting/brass_gear.json
 dad8fd0fd1c1c5f2df11416f5d0bb54a80cd947b data/gnkinetics/advancement/recipes/misc/crafting/brass_gear_from_conversion.json
+2c79b354dd5be462101a11595dd76ddd7964b5b2 data/gnkinetics/advancement/recipes/misc/crafting/chainable_cogwheel.json
+241bccda377a61d97355beda083b7316aeab78b5 data/gnkinetics/advancement/recipes/misc/crafting/chainable_cogwheel_from_zinc.json
 e88173b39126f66f24a1ec025ff894b2657e0efd data/gnkinetics/advancement/recipes/misc/crafting/cogstone.json
 9178994211590fb88510992d6c74bbbfd1fb6fb7 data/gnkinetics/advancement/recipes/misc/crafting/cogstone_from_conversion.json
 0e61cbe1f69c7661372af91752d5ab206aec7511 data/gnkinetics/advancement/recipes/misc/crafting/cogwheel_from_conversion.json
@@ -37,6 +39,8 @@ c35a0fee275ac9add152380bb34194b1926e6440 data/gnkinetics/recipe/crafting/andesit
 137162c937d3e735380c470900a16d8da9079587 data/gnkinetics/recipe/crafting/andesite_cogwheel_from_conversion.json
 e638ff535851db067b3bda94d653b5a8b57db204 data/gnkinetics/recipe/crafting/brass_gear.json
 5b3aae16c756d81bcf4fd8233aae1edaff6734d2 data/gnkinetics/recipe/crafting/brass_gear_from_conversion.json
+e4f1aafaa7e3b2408e1fb863fb6e3953fef201a8 data/gnkinetics/recipe/crafting/chainable_cogwheel.json
+8396d1cd6007c76ada696fb878b5a973b0b690ca data/gnkinetics/recipe/crafting/chainable_cogwheel_from_zinc.json
 71305ade31f430506e38c0efe326a12cd22e0b35 data/gnkinetics/recipe/crafting/cogstone.json
 1c850883622e26c18588876b88f567eab59d08a8 data/gnkinetics/recipe/crafting/cogstone_from_conversion.json
 c02b95d1ef7787b846d727ef7965312abb911a31 data/gnkinetics/recipe/crafting/cogwheel_from_conversion.json

@@ -12,6 +12,8 @@ import java.util.Map;
 public class GearsPartialModels {
     public static final PartialModel
             COG_CRANK_HANDLE = block("cog_crank/handle"),
+            CHAINABLE_COGWHEEL = block("chainable_cogwheel/cogwheel"),
+            CHAINABLE_COGWHEEL_CHAINS = block("chainable_cogwheel/chains"),
 
             SHAFTLESS_ANDESITE_COG = block("shaftless_andesite_cogwheel"),
             LARGE_SHAFTLESS_ANDESITE_COG = block("shaftless_large_andesite_cogwheel"),

@@ -1,6 +1,8 @@
 package dev.lopyluna.gnkinetics.register;
 
 import dev.lopyluna.gnkinetics.Gears;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.packets.ChainableCogwheelConnectionPacket;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.packets.ServerboundChainableCogwheelRidingPacket;
 import net.createmod.catnip.net.base.BasePacketPayload;
 import net.createmod.catnip.net.base.CatnipPacketRegistry;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -10,6 +12,8 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import java.util.Locale;
 
 public enum GearsPackets implements BasePacketPayload.PacketTypeProvider {
+    CHAIN_COGWHEEL_CONNECT(ChainableCogwheelConnectionPacket.class, ChainableCogwheelConnectionPacket.STREAM_CODEC),
+    CHAIN_COGWHEEL_RIDING(ServerboundChainableCogwheelRidingPacket.class, ServerboundChainableCogwheelRidingPacket.STREAM_CODEC),
     ;
 
     private final CatnipPacketRegistry.PacketType<?> type;

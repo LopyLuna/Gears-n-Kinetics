@@ -1,6 +1,7 @@
-// 1.21.1	2025-08-04T01:17:25.0963447	Registrate Provider for gnkinetics [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.21.1	2025-08-06T11:58:12.9823992	Registrate Provider for gnkinetics [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 5fa770a18f6ed1642b278fb4ff946053b8af9736 assets/gnkinetics/blockstates/andesite_cogwheel.json
 7c2b6b05f999d9f0b5600ef108bee716017005ad assets/gnkinetics/blockstates/brass_gear.json
+b483879f323e9db821376ecc1e6174ee852ef827 assets/gnkinetics/blockstates/chainable_cogwheel.json
 17094f86dd489a9b5e5a7738a729f3c1a29d5cd5 assets/gnkinetics/blockstates/cogstone.json
 80a34bc898c4f67cfc6d774d0d02176a6e9576a2 assets/gnkinetics/blockstates/cog_crank.json
 f04f351f2f1ca4ee0cbc9ca28dfece5ac8b82be5 assets/gnkinetics/blockstates/creative_gear_motor.json
@@ -27,14 +28,15 @@ a772ac7fbdded11c993b942d7ccca44624575c26 assets/gnkinetics/blockstates/shaftless
 3ae7f951f17a3f1d95c6a517877556bef5be4d9b assets/gnkinetics/blockstates/tiny_brass_gear.json
 6c2b017a3f6cdeb29c0b111386bdef58d5f76ae3 assets/gnkinetics/blockstates/tiny_cogwheel.json
 30bb20c9a9e093d37b3c4312d60ba683f1e6f726 assets/gnkinetics/blockstates/worm_gear.json
-88861d816d2c9dc1d8244c3f1f30442554e49d11 assets/gnkinetics/lang/en_ud.json
-c05c97f7dcb50f48571dfb9324e52182a36ea911 assets/gnkinetics/lang/en_us.json
+c958cb45709465196a9df6806b11431b3b368b20 assets/gnkinetics/lang/en_ud.json
+73f6fcd86965a89ca173ba49d4192fc91a3974ce assets/gnkinetics/lang/en_us.json
 1f986ee272ead6c14e65a5127dbee361550b692d assets/gnkinetics/models/block/worm_gear_end_flipped.json
 353c0aeac56201dc37d23fd65769a1a47976ffe7 assets/gnkinetics/models/block/worm_gear_middle_flipped.json
 954f73575d4e9457ca962129d716aadd6ad5e297 assets/gnkinetics/models/block/worm_gear_single_flipped.json
 0e635f1e11f2226e63121be1e2cb81132af9dce9 assets/gnkinetics/models/block/worm_gear_start_flipped.json
 b0aee06487925af4bcd6ad8b084e94507bb435f5 assets/gnkinetics/models/item/andesite_cogwheel.json
 105b0d378f0c0b925abcd359f633d849a0c26a8c assets/gnkinetics/models/item/brass_gear.json
+5b952267428d2119eea1c1dbac72b0612e119774 assets/gnkinetics/models/item/chainable_cogwheel.json
 f554967e92543208da19a35e7981d91a82d429b8 assets/gnkinetics/models/item/cogstone.json
 b4a39fded874e02e483a0e16a74ef78f385390ef assets/gnkinetics/models/item/cog_crank.json
 fa850f65a9a2ab64f7c7315ec57dabaa2fe60fd6 assets/gnkinetics/models/item/creative_gear_motor.json
@@ -67,6 +69,7 @@ fce5fe765b514bc602d205e1f3b23b309d31391c data/gnkinetics/advancement/recipes/mis
 ccee083bdcfdaa2ebda0175820f92ac652d8f861 data/gnkinetics/advancement/recipes/misc/crafting/large_cog_crank.json
 e6c5fc40281b337e350b48ec656cd2db3429b2a6 data/gnkinetics/loot_table/blocks/andesite_cogwheel.json
 24d427098bbe8c7804a525fc20a143ff499b38bf data/gnkinetics/loot_table/blocks/brass_gear.json
+55340447e448fb64d530e6abeee40235302690ca data/gnkinetics/loot_table/blocks/chainable_cogwheel.json
 68d31e6b7f848ec17e0c0698221ec8ee3543d68e data/gnkinetics/loot_table/blocks/cogstone.json
 4e9249a93b892a60b2391f509523ac4b4fd1e4d6 data/gnkinetics/loot_table/blocks/cog_crank.json
 1f8d2c239a957cfbbfed8b206705bb04aa682d93 data/gnkinetics/loot_table/blocks/creative_gear_motor.json
@@ -96,5 +99,5 @@ f09cf6df5e0e788897415ff8c736f370982b55e6 data/gnkinetics/loot_table/blocks/worm_
 5c2df076768902a10702fe46b9ed395a2bb02c07 data/gnkinetics/recipe/crafting/cog_crank.json
 c833f37332bb6bcee0b5e0fb81db568d95d9990a data/gnkinetics/recipe/crafting/cog_crank_to_large.json
 27566cd02efefa370753a751e29c0d6da8f10af4 data/gnkinetics/recipe/crafting/large_cog_crank.json
-f8024de71ced29cb6e13027c2cc4cd9426556048 data/minecraft/tags/block/mineable/axe.json
-c49af6b8c643b983991b2662042aa732abd500f4 data/minecraft/tags/block/mineable/pickaxe.json
+55932718f98b599913be4d9424d6f4c7323a4c62 data/minecraft/tags/block/mineable/axe.json
+7d8dc740e4bad7650baf4ca2cb5a11ce5267f794 data/minecraft/tags/block/mineable/pickaxe.json

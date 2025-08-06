@@ -1,6 +1,7 @@
 {
   "values": [
     "gnkinetics:creative_gear_motor",
+    "gnkinetics:chainable_cogwheel",
     "gnkinetics:cog_crank",
     "gnkinetics:large_cog_crank",
     "gnkinetics:worm_gear",

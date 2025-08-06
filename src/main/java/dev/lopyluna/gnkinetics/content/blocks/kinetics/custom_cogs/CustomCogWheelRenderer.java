@@ -27,6 +27,7 @@ public class CustomCogWheelRenderer extends BracketedKineticBlockEntityRenderer 
         super(context);
     }
 
+    @SuppressWarnings("all")
     @Override
     protected void renderSafe(BracketedKineticBlockEntity be, float partialTicks, PoseStack ms, MultiBufferSource buffer, int light, int overlay) {
         var state = be.getBlockState();
@@ -105,10 +106,6 @@ public class CustomCogWheelRenderer extends BracketedKineticBlockEntityRenderer 
 
     public static float getAngleForLargeCogShaft(KineticBlockEntity be, Direction.Axis axis, float additive, float modifier, boolean offset) {
         return ((AnimationTickHolder.getRenderTime(be.getLevel()) * (be.getSpeed() * modifier) * 3f / 10 + (offset ? getShaftAngleOffset(axis, be.getBlockPos()) : 0) + additive) % 360) / 180 * (float) Math.PI;
-    }
-
-    public static float getAngleForLargeCogShaft(KineticBlockEntity be, Direction.Axis axis, boolean offset) {
-        return ((AnimationTickHolder.getRenderTime(be.getLevel()) * be.getSpeed() * 3f / 10 + (offset ? getShaftAngleOffset(axis, be.getBlockPos()) : 0)) % 360) / 180 * (float) Math.PI;
     }
 
     public static float getShaftAngleOffset(Direction.Axis axis, BlockPos pos) {

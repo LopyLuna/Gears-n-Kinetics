@@ -11,6 +11,8 @@ import dev.engine_room.flywheel.api.visualization.VisualizationContext;
 import dev.engine_room.flywheel.lib.model.Models;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import dev.engine_room.flywheel.lib.visualization.SimpleBlockEntityVisualizer;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.ChainableCogwheelBE;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.ChainableCogwheelRenderer;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankBE;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankRenderer;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankVisual;
@@ -28,6 +30,12 @@ import net.minecraft.core.Direction;
 import static dev.lopyluna.gnkinetics.Gears.REG;
 
 public class GearsBETypes {
+
+    public static final BlockEntityEntry<ChainableCogwheelBE> CHAINABLE_COGWHEEL = REG
+            .blockEntity("chainable_cogwheel", ChainableCogwheelBE::new)
+            .validBlocks(GearsBlocks.CHAINABLE_COGWHEEL)
+            .renderer(() -> ChainableCogwheelRenderer::new)
+            .register();
 
     public static final BlockEntityEntry<WormGearBE> WORM_GEAR = REG
             .blockEntity("worm_gear", WormGearBE::new)

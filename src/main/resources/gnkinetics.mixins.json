@@ -4,10 +4,13 @@
   "package": "dev.lopyluna.gnkinetics.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BracketBlockMixin",
+    "ChainConveyorOBBAccessor",
     "KineticBlockEntityMixin",
     "PlacementClientMixin",
     "RotationPropagatorAccessor",
     "RotationPropagatorMixin",
+    "ServerGamePacketListenerImplAccessor",
     "ShaftBlockPlacementHelperMixin",
     "remappings.BlockMixin",
     "remappings.BlockStateBaseMixin",

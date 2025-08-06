@@ -31,7 +31,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "SameParameterValue"})
 public class VanillaRecipeGen extends BaseRecipeProvider {
     final List<GeneratedRecipe> all = new ArrayList<>();
 
@@ -50,6 +50,21 @@ public class VanillaRecipeGen extends BaseRecipeProvider {
                     .pattern("bbb")
                     .pattern("bgb")
                     .pattern("bbb"));
+
+
+    GeneratedRecipe CHAINABLE_COGWHEEL = create(GearsBlocks.CHAINABLE_COGWHEEL).unlockedBy(AllBlocks.ANDESITE_CASING::get)
+            .viaShapeless(b -> b
+                    .requires(AllBlocks.LARGE_COGWHEEL.get())
+                    .requires(AllBlocks.ANDESITE_CASING)
+                    .requires(GearsTags.commonItemTag("nuggets/iron"))
+                    .requires(GearsTags.commonItemTag("nuggets/iron")));
+
+    GeneratedRecipe CHAINABLE_COGWHEEL_ZINC = create(GearsBlocks.CHAINABLE_COGWHEEL).withSuffix("_from_zinc").unlockedBy(AllBlocks.ANDESITE_CASING::get)
+            .viaShapeless(b -> b
+                    .requires(AllBlocks.LARGE_COGWHEEL.get())
+                    .requires(AllBlocks.ANDESITE_CASING)
+                    .requires(GearsTags.commonItemTag("nuggets/zinc"))
+                    .requires(GearsTags.commonItemTag("nuggets/zinc")));
 
     GeneratedRecipe TINY_COGWHEEL = create(GearsBlocks.TINY_COG).unlockedBy(AllItems.ANDESITE_ALLOY::get)
             .viaShapeless(b -> b
