@@ -86,6 +86,7 @@ public class ChainableCogwheelBE extends KineticBlockEntity implements Transform
     }
 
     //Contraption#moveBlock
+
     public void notifyConnectedToValidate() {
         assert level != null;
         for (var blockPos : connections) {

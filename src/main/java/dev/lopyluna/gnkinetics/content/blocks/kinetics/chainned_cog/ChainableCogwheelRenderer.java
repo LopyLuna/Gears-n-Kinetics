@@ -15,7 +15,6 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -45,6 +44,7 @@ public class ChainableCogwheelRenderer extends KineticBlockEntityRenderer<Chaina
         renderChains(be, axis, ms, buffer, light, overlay);
     }
 
+    @SuppressWarnings("unused")
     private void renderChains(ChainableCogwheelBE be, Direction.Axis axis, PoseStack ms, MultiBufferSource buffer, int light, int overlay) {
         float time = AnimationTickHolder.getRenderTime(be.getLevel()) / (360f / Math.abs(be.getSpeed() * 1.25f));
         time %= 1;

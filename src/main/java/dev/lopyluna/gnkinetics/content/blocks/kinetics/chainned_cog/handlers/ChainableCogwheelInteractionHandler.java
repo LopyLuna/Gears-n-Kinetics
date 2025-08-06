@@ -29,7 +29,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RenderHighlightEvent;
 
 import java.util.List;
-import java.util.Map;
 
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
 
