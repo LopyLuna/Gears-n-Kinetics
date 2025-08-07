@@ -3,11 +3,12 @@ package dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.handlers;
 import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.content.equipment.blueprint.BlueprintOverlayRenderer;
 import com.simibubi.create.foundation.utility.CreateLang;
-import com.simibubi.create.infrastructure.config.AllConfigs;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.ChainableCogwheelBE;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.ChainableCogwheelBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.packets.ChainableCogwheelConnectionPacket;
 import dev.lopyluna.gnkinetics.register.GearsBlocks;
+import dev.lopyluna.gnkinetics.register.GearsConfigs;
+import dev.lopyluna.gnkinetics.register.GearsLang;
 import dev.lopyluna.gnkinetics.register.GearsShapes;
 import net.createmod.catnip.outliner.Outliner;
 import net.createmod.catnip.platform.CatnipServices;
@@ -56,7 +57,7 @@ public class ChainableCogwheelConnectionHandler {
         if (mc.hitResult instanceof BlockHitResult bhr && bhr.getType() != HitResult.Type.MISS) if (!(mc.level.getBlockEntity(bhr.getBlockPos()) instanceof ChainableCogwheelBE)) missed = true;
         if (!mc.player.isShiftKeyDown() && !missed) return false;
         firstPos = null;
-        CreateLang.translate("chain_conveyor.selection_cleared").sendStatus(mc.player);
+        GearsLang.translate("chainable_cogwheel.selection_cleared").sendStatus(mc.player);
         return true;
     }
 
@@ -78,8 +79,8 @@ public class ChainableCogwheelConnectionHandler {
 
         if (!level.isClientSide())
             return;
-        if (level.getBlockEntity(pos) instanceof ChainableCogwheelBE ccbe && ccbe.connections.size() >= AllConfigs.server().kinetics.maxChainConveyorConnections.get()) {
-            CreateLang.translate("chain_conveyor.cannot_add_more_connections").style(ChatFormatting.RED).sendStatus(player);
+        if (level.getBlockEntity(pos) instanceof ChainableCogwheelBE ccbe && ccbe.connections.size() >= GearsConfigs.server().kinetics.maxChainableCogwheelConnections.get()) {
+            GearsLang.translate("chainable_cogwheel.cannot_add_more_connections").style(ChatFormatting.RED).sendStatus(player);
             return;
         }
 
@@ -114,7 +115,7 @@ public class ChainableCogwheelConnectionHandler {
 
         if (firstDim != player.level().dimension() || !(sourceLift instanceof ChainableCogwheelBE)) {
             firstPos = null;
-            CreateLang.translate("chain_conveyor.selection_cleared").sendStatus(player);
+            GearsLang.translate("chainable_cogwheel.selection_cleared").sendStatus(player);
             return;
         }
         Level level = player.level();
@@ -139,7 +140,7 @@ public class ChainableCogwheelConnectionHandler {
 
         if (pos.equals(firstPos)) {
             Outliner.getInstance().showAABB("chain_connect", firstShape.bounds().move(firstPos)).lineWidth(1 / 16f).colored(0xFFFFFF);
-            CreateLang.translate("chain_conveyor.select_second").sendStatus(player);
+            GearsLang.translate("chainable_cogwheel.select_second").sendStatus(player);
             return;
         }
 
@@ -151,7 +152,7 @@ public class ChainableCogwheelConnectionHandler {
 
         boolean success = validateAndConnect(level, pos, player, stack, true);
 
-        if (success) CreateLang.translate("chain_conveyor.valid_connection").style(ChatFormatting.GREEN).sendStatus(player);
+        if (success) GearsLang.translate("chainable_cogwheel.valid_connection").style(ChatFormatting.GREEN).sendStatus(player);
 
         int color = success ? 0x95CD41 : 0xEA5C2B;
 
@@ -182,16 +183,16 @@ public class ChainableCogwheelConnectionHandler {
     @SuppressWarnings("all")
     public static boolean validateAndConnect(LevelAccessor level, BlockPos pos, Player player, ItemStack chain, boolean simulate) {
         if (!simulate && player.isShiftKeyDown()) {
-            CreateLang.translate("chain_conveyor.selection_cleared").sendStatus(player);
+            GearsLang.translate("chainable_cogwheel.selection_cleared").sendStatus(player);
             return false;
         }
 
         if (pos.equals(firstPos)) return false;
         var axis = getAxis(level, pos);
         var firstAxis = getAxis(level, firstPos);
-        if (axis != firstAxis) return false;
-        if (!pos.closerThan(firstPos, AllConfigs.server().kinetics.maxChainConveyorLength.get())) return fail("chain_conveyor.too_far");
-        if (pos.closerThan(firstPos, 2.5)) return fail("chain_conveyor.too_close");
+        if (axis != firstAxis) return fail("chainable_cogwheel.cannot_connect_axis");
+        if (!pos.closerThan(firstPos, GearsConfigs.server().kinetics.maxChainableCogwheelConnections.get())) return fail("chainable_cogwheel.too_far");
+        if (pos.closerThan(firstPos, 2.5)) return fail("chainable_cogwheel.too_close");
 
         Vec3 diff = Vec3.atLowerCornerOf(pos.subtract(firstPos));
         double horizontalDistance = switch (axis) {
@@ -201,22 +202,22 @@ public class ChainableCogwheelConnectionHandler {
         };
 
 
-        if (horizontalDistance <= 0 || Math.abs(diff.get(axis)) > 0) return fail("chain_conveyor.cannot_connect_vertically");
-        if (Math.abs(diff.get(axis)) / horizontalDistance > 1) return fail("chain_conveyor.too_steep");
+        if (horizontalDistance <= 0 || Math.abs(diff.get(axis)) > 0) return fail("chainable_cogwheel.cannot_connect_vertically");
+        if (Math.abs(diff.get(axis)) / horizontalDistance > 1) return fail("chainable_cogwheel.too_steep");
 
         ChainableCogwheelBlock chainConveyorBlock = GearsBlocks.CHAINABLE_COGWHEEL.get();
         ChainableCogwheelBE sourceLift = chainConveyorBlock.getBlockEntity(level, firstPos);
         ChainableCogwheelBE targetLift = chainConveyorBlock.getBlockEntity(level, pos);
 
-        if (targetLift.connections.size() >= AllConfigs.server().kinetics.maxChainConveyorConnections.get()) return fail("chain_conveyor.cannot_add_more_connections");
-        if (targetLift.connections.contains(firstPos.subtract(pos))) return fail("chain_conveyor.already_connected");
-        if (sourceLift == null || targetLift == null) return fail("chain_conveyor.blocks_invalid");
+        if (targetLift.connections.size() >= GearsConfigs.server().kinetics.maxChainableCogwheelLength.get()) return fail("chainable_cogwheel.cannot_add_more_connections");
+        if (targetLift.connections.contains(firstPos.subtract(pos))) return fail("chainable_cogwheel.already_connected");
+        if (sourceLift == null || targetLift == null) return fail("chainable_cogwheel.blocks_invalid");
 
         if (!player.isCreative()) {
             int chainCost = getChainCost(pos.subtract(firstPos));
             boolean hasEnough = getChainsFromInventory(player, chain, chainCost, true);
             if (simulate) BlueprintOverlayRenderer.displayChainRequirements(chain.getItem(), chainCost, hasEnough);
-            if (!hasEnough) return fail("chain_conveyor.not_enough_chains");
+            if (!hasEnough) return fail("chainable_cogwheel.not_enough_chains");
         }
 
         if (simulate) return true;
@@ -231,7 +232,7 @@ public class ChainableCogwheelConnectionHandler {
 
     private static boolean fail(String message) {
         assert Minecraft.getInstance().player != null;
-        CreateLang.translate(message).style(ChatFormatting.RED).sendStatus(Minecraft.getInstance().player);
+        GearsLang.translate(message).style(ChatFormatting.RED).sendStatus(Minecraft.getInstance().player);
         return false;
     }
 }

@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-06T11:58:12.9823992	Registrate Provider for gnkinetics [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.21.1	2025-08-06T17:55:57.7335789	Registrate Provider for gnkinetics [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 5fa770a18f6ed1642b278fb4ff946053b8af9736 assets/gnkinetics/blockstates/andesite_cogwheel.json
 7c2b6b05f999d9f0b5600ef108bee716017005ad assets/gnkinetics/blockstates/brass_gear.json
 b483879f323e9db821376ecc1e6174ee852ef827 assets/gnkinetics/blockstates/chainable_cogwheel.json
@@ -28,8 +28,8 @@ a772ac7fbdded11c993b942d7ccca44624575c26 assets/gnkinetics/blockstates/shaftless
 3ae7f951f17a3f1d95c6a517877556bef5be4d9b assets/gnkinetics/blockstates/tiny_brass_gear.json
 6c2b017a3f6cdeb29c0b111386bdef58d5f76ae3 assets/gnkinetics/blockstates/tiny_cogwheel.json
 30bb20c9a9e093d37b3c4312d60ba683f1e6f726 assets/gnkinetics/blockstates/worm_gear.json
-c958cb45709465196a9df6806b11431b3b368b20 assets/gnkinetics/lang/en_ud.json
-73f6fcd86965a89ca173ba49d4192fc91a3974ce assets/gnkinetics/lang/en_us.json
+03c812de147c86e524b2abd988534631b25a2a66 assets/gnkinetics/lang/en_ud.json
+ad420f20a6c876a1301f309e473ff6bd5382cbd0 assets/gnkinetics/lang/en_us.json
 1f986ee272ead6c14e65a5127dbee361550b692d assets/gnkinetics/models/block/worm_gear_end_flipped.json
 353c0aeac56201dc37d23fd65769a1a47976ffe7 assets/gnkinetics/models/block/worm_gear_middle_flipped.json
 954f73575d4e9457ca962129d716aadd6ad5e297 assets/gnkinetics/models/block/worm_gear_single_flipped.json

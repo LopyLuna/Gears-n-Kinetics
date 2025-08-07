@@ -27,5 +27,17 @@
   "block.gnkinetics.shaftless_tiny_cogwheel": "Tiny Shaftless Cogwheel",
   "block.gnkinetics.tiny_brass_gear": "Tiny Brass Gear",
   "block.gnkinetics.tiny_cogwheel": "Tiny Cogwheel",
-  "block.gnkinetics.worm_gear": "Worm Gear"
+  "block.gnkinetics.worm_gear": "Worm Gear",
+  "gnkinetics.chainable_cogwheel.already_connected": "Cogwheels are already connected",
+  "gnkinetics.chainable_cogwheel.blocks_invalid": "Cogwheels blocks invalid, Sneak-click to reset",
+  "gnkinetics.chainable_cogwheel.cannot_add_more_connections": "Cannot add more connections to this Cogwheel",
+  "gnkinetics.chainable_cogwheel.cannot_connect_axis": "Cannot connect axis cogwheels",
+  "gnkinetics.chainable_cogwheel.cannot_connect_vertically": "Cannot connect axis above/below direction",
+  "gnkinetics.chainable_cogwheel.not_enough_chains": "Not holding enough chains",
+  "gnkinetics.chainable_cogwheel.select_second": "Select a second cogwheel to connect",
+  "gnkinetics.chainable_cogwheel.selection_cleared": "Selection Cleared",
+  "gnkinetics.chainable_cogwheel.too_close": "Too close together",
+  "gnkinetics.chainable_cogwheel.too_far": "Too far apart",
+  "gnkinetics.chainable_cogwheel.too_steep": "Slope too steep",
+  "gnkinetics.chainable_cogwheel.valid_connection": "Can Connect ✔"
 }

@@ -29,6 +29,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.*;
@@ -45,10 +46,14 @@ public class ChainableCogwheelBE extends KineticBlockEntity implements Transform
     public boolean checkInvalid;
 
     BlockPos chainDestroyedEffectToSend;
-
     public ChainableCogwheelBE(BlockEntityType<?> typeIn, BlockPos pos, BlockState state) {
         super(typeIn, pos, state);
         checkInvalid = true;
+    }
+
+    @Override
+    protected AABB createRenderBoundingBox() {
+        return new AABB(worldPosition).inflate(connections.isEmpty() ? 3 : 64);
     }
 
     @Override

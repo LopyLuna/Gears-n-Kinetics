@@ -2,9 +2,9 @@ package dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.packets;
 
 import com.simibubi.create.content.kinetics.chainConveyor.ServerChainConveyorHandler;
 import com.simibubi.create.foundation.networking.BlockEntityConfigurationPacket;
-import com.simibubi.create.infrastructure.config.AllConfigs;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.ChainableCogwheelBE;
 import dev.lopyluna.gnkinetics.mixins.ServerGamePacketListenerImplAccessor;
+import dev.lopyluna.gnkinetics.register.GearsConfigs;
 import dev.lopyluna.gnkinetics.register.GearsPackets;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.core.BlockPos;
@@ -33,7 +33,7 @@ public class ServerboundChainableCogwheelRidingPacket extends BlockEntityConfigu
 
 	@Override
 	protected int maxRange() {
-		return AllConfigs.server().kinetics.maxChainConveyorLength.get() * 2;
+		return GearsConfigs.server().kinetics.maxChainableCogwheelLength.get() * 2;
 	}
 
 	@Override

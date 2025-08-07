@@ -27,5 +27,17 @@
   "block.gnkinetics.shaftless_tiny_cogwheel": "ןǝǝɥʍboƆ ssǝןʇɟɐɥS ʎuı⟘",
   "block.gnkinetics.tiny_brass_gear": "ɹɐǝ⅁ ssɐɹᗺ ʎuı⟘",
   "block.gnkinetics.tiny_cogwheel": "ןǝǝɥʍboƆ ʎuı⟘",
-  "block.gnkinetics.worm_gear": "ɹɐǝ⅁ ɯɹoM"
+  "block.gnkinetics.worm_gear": "ɹɐǝ⅁ ɯɹoM",
+  "gnkinetics.chainable_cogwheel.already_connected": "pǝʇɔǝuuoɔ ʎpɐǝɹןɐ ǝɹɐ sןǝǝɥʍboƆ",
+  "gnkinetics.chainable_cogwheel.blocks_invalid": "ʇǝsǝɹ oʇ ʞɔıןɔ-ʞɐǝuS 'pıןɐʌuı sʞɔoןq sןǝǝɥʍboƆ",
+  "gnkinetics.chainable_cogwheel.cannot_add_more_connections": "ןǝǝɥʍboƆ sıɥʇ oʇ suoıʇɔǝuuoɔ ǝɹoɯ ppɐ ʇouuɐƆ",
+  "gnkinetics.chainable_cogwheel.cannot_connect_axis": "sןǝǝɥʍboɔ sıxɐ ʇɔǝuuoɔ ʇouuɐƆ",
+  "gnkinetics.chainable_cogwheel.cannot_connect_vertically": "uoıʇɔǝɹıp ʍoןǝq/ǝʌoqɐ sıxɐ ʇɔǝuuoɔ ʇouuɐƆ",
+  "gnkinetics.chainable_cogwheel.not_enough_chains": "suıɐɥɔ ɥbnouǝ buıpןoɥ ʇoN",
+  "gnkinetics.chainable_cogwheel.select_second": "ʇɔǝuuoɔ oʇ ןǝǝɥʍboɔ puoɔǝs ɐ ʇɔǝןǝS",
+  "gnkinetics.chainable_cogwheel.selection_cleared": "pǝɹɐǝןƆ uoıʇɔǝןǝS",
+  "gnkinetics.chainable_cogwheel.too_close": "ɹǝɥʇǝboʇ ǝsoןɔ oo⟘",
+  "gnkinetics.chainable_cogwheel.too_far": "ʇɹɐdɐ ɹɐɟ oo⟘",
+  "gnkinetics.chainable_cogwheel.too_steep": "dǝǝʇs ooʇ ǝdoןS",
+  "gnkinetics.chainable_cogwheel.valid_connection": "✔ ʇɔǝuuoƆ uɐƆ"
 }
