@@ -9,8 +9,8 @@ import com.simibubi.create.content.kinetics.speedController.SpeedControllerBlock
 import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
-import com.simibubi.create.infrastructure.config.AllConfigs;
 import dev.lopyluna.gnkinetics.register.GearsBETypes;
+import dev.lopyluna.gnkinetics.register.GearsConfigs;
 import dev.lopyluna.gnkinetics.register.GearsShapes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -84,7 +84,7 @@ public class CogCrankBlock extends RotatedPillarKineticBlock implements IBE<CogC
         if (stack.getItem() instanceof BlockItem bi && bi.getBlock() instanceof ICogWheel cog && cog.isDedicatedCogWheel() || player.isSpectator()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
         withBlockEntityDo(level, pos, be -> be.turn(player.isShiftKeyDown()));
-        if (!stack.is(AllItems.EXTENDO_GRIP.get())) player.causeFoodExhaustion(getRotationSpeed() * AllConfigs.server().kinetics.crankHungerMultiplier.getF());
+        if (!stack.is(AllItems.EXTENDO_GRIP.get())) player.causeFoodExhaustion(getRotationSpeed() * GearsConfigs.server().kinetics.cogCrankHungerMultiplier.getF());
         if (player.getFoodData().getFoodLevel() == 0) AllAdvancements.HAND_CRANK.awardTo(player);
 
         return ItemInteractionResult.SUCCESS;

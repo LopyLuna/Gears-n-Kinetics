@@ -191,7 +191,7 @@ public class ChainableCogwheelConnectionHandler {
         var axis = getAxis(level, pos);
         var firstAxis = getAxis(level, firstPos);
         if (axis != firstAxis) return fail("chainable_cogwheel.cannot_connect_axis");
-        if (!pos.closerThan(firstPos, GearsConfigs.server().kinetics.maxChainableCogwheelConnections.get())) return fail("chainable_cogwheel.too_far");
+        if (!pos.closerThan(firstPos, GearsConfigs.server().kinetics.maxChainableCogwheelLength.get())) return fail("chainable_cogwheel.too_far");
         if (pos.closerThan(firstPos, 2.5)) return fail("chainable_cogwheel.too_close");
 
         Vec3 diff = Vec3.atLowerCornerOf(pos.subtract(firstPos));
@@ -209,7 +209,7 @@ public class ChainableCogwheelConnectionHandler {
         ChainableCogwheelBE sourceLift = chainConveyorBlock.getBlockEntity(level, firstPos);
         ChainableCogwheelBE targetLift = chainConveyorBlock.getBlockEntity(level, pos);
 
-        if (targetLift.connections.size() >= GearsConfigs.server().kinetics.maxChainableCogwheelLength.get()) return fail("chainable_cogwheel.cannot_add_more_connections");
+        if (targetLift.connections.size() >= GearsConfigs.server().kinetics.maxChainableCogwheelConnections.get()) return fail("chainable_cogwheel.cannot_add_more_connections");
         if (targetLift.connections.contains(firstPos.subtract(pos))) return fail("chainable_cogwheel.already_connected");
         if (sourceLift == null || targetLift == null) return fail("chainable_cogwheel.blocks_invalid");
 
