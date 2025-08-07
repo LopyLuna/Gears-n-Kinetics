@@ -42,6 +42,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.extensions.common.IClientBlockExtensions;
@@ -88,7 +89,25 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
         var masterState = level.getBlockState(masterPos);
         if (masterState.getBlock() instanceof RingGearBlock)
             return GearsShapes.shape(GearsShapes.cuboid(0, 4, 0, 16, 12, 16)).forAxis().get(masterState.getValue(RingGearBlock.AXIS));
+        return context instanceof EntityCollisionContext eContext && eContext.getEntity() != null ? Shapes.empty() : Shapes.block();
+    }
+
+    protected @NotNull VoxelShape getBlockSupportShape(BlockState state, BlockGetter reader, BlockPos pos) {
         return Shapes.empty();
+    }
+
+    @Override
+    protected boolean isCollisionShapeFullBlock(BlockState state, BlockGetter level, BlockPos pos) {
+        return false;
+    }
+
+    @Override
+    protected boolean isOcclusionShapeFullBlock(BlockState state, BlockGetter level, BlockPos pos) {
+        return false;
+    }
+
+    @Override
+    protected void spawnDestroyParticles(Level level, Player player, BlockPos pos, BlockState state) {
     }
 
     @Override
@@ -98,7 +117,7 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
 
     @Override
     public @NotNull RenderShape getRenderShape(@NotNull BlockState pState) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.INVISIBLE;
     }
 
     @Override

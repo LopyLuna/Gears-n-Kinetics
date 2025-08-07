@@ -66,6 +66,16 @@ public class ChainableCogwheelBlock extends RotatedPillarKineticBlock implements
 
 
     @Override
+    public InteractionResult onWrenched(BlockState state, UseOnContext context) {
+        var result = super.onWrenched(state, context);
+        if (result.consumesAction()) {
+            withBlockEntityDo(context.getLevel(), context.getClickedPos(), ChainableCogwheelBE::notifyConnectedToValidate);
+            return result;
+        }
+        return result;
+    }
+
+    @Override
     public InteractionResult onSneakWrenched(BlockState state, UseOnContext context) {
         var player = context.getPlayer();
         if (player == null) return super.onSneakWrenched(state, context);

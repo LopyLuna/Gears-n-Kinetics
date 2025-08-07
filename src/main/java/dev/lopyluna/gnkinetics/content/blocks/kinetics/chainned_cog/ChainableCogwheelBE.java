@@ -36,7 +36,9 @@ import java.util.*;
 import java.util.function.Consumer;
 
 import static com.simibubi.create.content.kinetics.chainConveyor.ChainConveyorBlockEntity.getChainCost;
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
 
+@SuppressWarnings("unused")
 public class ChainableCogwheelBE extends KineticBlockEntity implements TransformableBlockEntity {
     public Set<BlockPos> connections = new HashSet<>();
     public Map<BlockPos, ConnectionStats> connectionStats;
@@ -79,7 +81,7 @@ public class ChainableCogwheelBE extends KineticBlockEntity implements Transform
     public void removeInvalidConnections() {
         assert level != null;
         var changed = false;
-        for (var iterator = connections.iterator(); iterator.hasNext(); ) {
+        for (var iterator = connections.iterator(); iterator.hasNext();) {
             var nextPos = iterator.next();
             var targetPos = worldPosition.offset(nextPos);
             if (!level.isLoaded(targetPos)) continue;
@@ -97,8 +99,24 @@ public class ChainableCogwheelBE extends KineticBlockEntity implements Transform
         for (var blockPos : connections) {
             var target = worldPosition.offset(blockPos);
             if (!level.isLoaded(target)) continue;
-            if (level.getBlockEntity(target) instanceof ChainableCogwheelBE ccbe) ccbe.checkInvalid = true;
+            if (level.getBlockEntity(target) instanceof ChainableCogwheelBE ccbe) {
+                if (isValid(ccbe, target)) ccbe.checkInvalid = true;
+                else {
+                    chainDestroyed(blockPos, !cancelDrops, false);
+                    removeConnectionTo(target);
+                    ccbe.removeConnectionTo(worldPosition);
+                }
+            } else {
+                chainDestroyed(blockPos, !cancelDrops, false);
+                removeConnectionTo(target);
+            }
         }
+    }
+
+    public boolean isValid(ChainableCogwheelBE targetBE, BlockPos targetPos) {
+        var state = getBlockState();
+        var targetState = targetBE.getBlockState();
+        return state.getValue(AXIS) == targetState.getValue(AXIS);
     }
 
     public boolean loopThresholdCrossed(float chainPosition, float prevChainPosition, float offBranchAngle) {
@@ -195,7 +213,7 @@ public class ChainableCogwheelBE extends KineticBlockEntity implements Transform
 
         List<ChainConveyorShape> shapes = new ArrayList<>();
         shapes.add(new ChainableCogwheelShapeBB(Vec3.atBottomCenterOf(BlockPos.ZERO)));
-        for (BlockPos target : connections) {
+        for (var target : connections) {
             ConnectionStats stats = connectionStats.get(target);
             if (stats == null) continue;
             Vec3 localStart = stats.start().subtract(Vec3.atLowerCornerOf(worldPosition));

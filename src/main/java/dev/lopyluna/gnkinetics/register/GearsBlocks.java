@@ -32,6 +32,7 @@ import dev.lopyluna.gnkinetics.content.blocks.kinetics.worm_gear.WormGearBlock;
 import dev.lopyluna.gnkinetics.content.configs.server.kinetics.GStress;
 import dev.lopyluna.gnkinetics.register.client.GearsPartialModels;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -40,6 +41,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -77,7 +79,7 @@ public class GearsBlocks {
             .transform(axeOrPickaxe())
             .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, s -> AssetLookup.partialBaseModel(c, p)))
             .addLayer(() -> RenderType::cutoutMipped)
-            .transform(GStress.setNoImpact())
+            .transform(GStress.setImpact(1))
             .item()
             .transform(customItemModel())
             .register();
@@ -147,7 +149,7 @@ public class GearsBlocks {
 
     public static final BlockEntry<RingGearBlock> RING_GEAR = REG.block("ring_gear", RingGearBlock::new)
             .initialProperties(SharedProperties::stone)
-            .properties(p -> p.noOcclusion().sound(SoundType.METAL).mapColor(MapColor.TERRACOTTA_YELLOW))
+            .properties(p -> p.noOcclusion().isSuffocating(GearsBlocks::never).sound(SoundType.METAL).mapColor(MapColor.TERRACOTTA_YELLOW))
             .transform(pickaxeOnly())
             .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, getBlockModel(true, c, p)))
             .addLayer(() -> RenderType::cutoutMipped)
@@ -161,7 +163,7 @@ public class GearsBlocks {
             .initialProperties(SharedProperties::wooden)
             .clientExtension(() -> RingGearStructure.RenderProperties::new)
             .blockstate((c, p) -> p.getVariantBuilder(c.get()).forAllStatesExcept(BlockStateGen.mapToAir(p), RingGearStructure.FACING))
-            .properties(p -> p.noOcclusion().sound(SoundType.METAL).mapColor(MapColor.TERRACOTTA_YELLOW))
+            .properties(p -> p.noOcclusion().isSuffocating(GearsBlocks::never).sound(SoundType.METAL).mapColor(MapColor.TERRACOTTA_YELLOW))
             .transform(pickaxeOnly())
             .lang("Ring Gear")
             .register();
@@ -379,6 +381,10 @@ public class GearsBlocks {
     }
     public static <I extends BlockItem> void getItemModelShaftless(boolean isLarge, DataGenContext<Item, I> c, RegistrateItemModelProvider p) {
         p.withExistingParent(c.getName(), Create.asResource("block/" + (isLarge ? "large_cogwheel" : "cogwheel") + "_shaftless"));
+    }
+
+    private static boolean never(BlockState state, BlockGetter blockGetter, BlockPos pos) {
+        return false;
     }
 
     public static void register() {}
