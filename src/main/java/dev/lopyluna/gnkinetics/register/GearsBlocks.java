@@ -18,12 +18,13 @@ import com.tterrag.registrate.providers.RegistrateItemModelProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import dev.lopyluna.gnkinetics.Gears;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.ICogWheelItem;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.ChainableCogwheelBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankItem;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.creative_gear_motor.CreativeGearMotorBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.custom_cogs.CustomCogWheelBlock;
-import dev.lopyluna.gnkinetics.content.blocks.kinetics.custom_cogs.CustomCogWheelItem;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.magnet_gears.MagnetGearBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearItem;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearStructure;
@@ -147,6 +148,32 @@ public class GearsBlocks {
             .transform(customItemModel("_", "block_single"))
             .register();
 
+    public static final BlockEntry<MagnetGearBlock> MAGNET_GEAR = REG.block("magnet_gear", MagnetGearBlock::small)
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.noOcclusion().sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.COLOR_ORANGE))
+            .transform(pickaxeOnly())
+            .blockstate((c, p) -> BlockStateGen.axisBlock(c, p,
+                    s -> p.models().getExistingFile(p.modLoc("block/magnet_gear/small_shaftless"))))
+            .addLayer(() -> RenderType::cutoutMipped)
+            .transform(GStress.setNoImpact())
+            .lang("Magnet Gear")
+            .item(ICogWheelItem::new)
+            .transform(customItemModel("magnet_gear", "small"))
+            .register();
+
+    public static final BlockEntry<MagnetGearBlock> LARGE_MAGNET_GEAR = REG.block("large_magnet_gear", MagnetGearBlock::large)
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.noOcclusion().sound(SoundType.NETHERITE_BLOCK).mapColor(MapColor.COLOR_ORANGE))
+            .transform(pickaxeOnly())
+            .blockstate((c, p) -> BlockStateGen.axisBlock(c, p,
+                    s -> p.models().getExistingFile(p.modLoc("block/magnet_gear/large_shaftless"))))
+            .addLayer(() -> RenderType::cutoutMipped)
+            .transform(GStress.setNoImpact())
+            .lang("Large Magnet Gear")
+            .item(ICogWheelItem::new)
+            .transform(customItemModel("magnet_gear", "large"))
+            .register();
+
     public static final BlockEntry<RingGearBlock> RING_GEAR = REG.block("ring_gear", RingGearBlock::new)
             .initialProperties(SharedProperties::stone)
             .properties(p -> p.noOcclusion().isSuffocating(GearsBlocks::never).sound(SoundType.METAL).mapColor(MapColor.TERRACOTTA_YELLOW))
@@ -215,28 +242,28 @@ public class GearsBlocks {
     public static final BlockEntry<CustomCogWheelBlock> COG_STONE = REG.block("cogstone", p ->
                     CustomCogWheelBlock.smallThick(GearsPartialModels.SHAFTLESS_COG_STONE, p))
             .transform(cogwheel("Cogstone", SoundType.STONE, MapColor.STONE))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> SHAFTLESS_COG_STONE = REG.block("shaftless_cogstone", p ->
                     CustomCogWheelBlock.smallShaftlessThick(GearsPartialModels.SHAFTLESS_COG_STONE, p))
             .transform(cogwheel("Shaftless Cogstone", SoundType.STONE, MapColor.STONE))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> ANDESITE_COG = REG.block("andesite_cogwheel", p ->
                     CustomCogWheelBlock.small(GearsPartialModels.SHAFTLESS_ANDESITE_COG, p))
             .transform(cogwheel("Andesite Cogwheel", SoundType.STONE, MapColor.STONE))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> SHAFTLESS_ANDESITE_COG = REG.block("shaftless_andesite_cogwheel", p ->
                     CustomCogWheelBlock.smallShaftless(GearsPartialModels.SHAFTLESS_ANDESITE_COG, p))
             .transform(cogwheel("Shaftless Andesite Cogwheel", SoundType.STONE, MapColor.STONE))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
@@ -245,84 +272,84 @@ public class GearsBlocks {
     public static final BlockEntry<CustomCogWheelBlock> INDUSTRIAL_GEAR = REG.block("industrial_gear", p ->
                     CustomCogWheelBlock.smallThick(GearsPartialModels.SHAFTLESS_INDUSTRIAL_GEAR, p))
             .transform(cogwheel("Industrial Gear", SoundType.NETHERITE_BLOCK, MapColor.COLOR_GRAY))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> LARGE_INDUSTRIAL_GEAR = REG.block("large_industrial_gear", p ->
                     CustomCogWheelBlock.largeThick(GearsPartialModels.LARGE_SHAFTLESS_INDUSTRIAL_GEAR, p))
             .transform(cogwheel("Large Industrial Gear", SoundType.NETHERITE_BLOCK, MapColor.COLOR_GRAY))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> SHAFTLESS_INDUSTRIAL_GEAR = REG.block("shaftless_industrial_gear", p ->
                     CustomCogWheelBlock.smallShaftlessThick(GearsPartialModels.SHAFTLESS_INDUSTRIAL_GEAR, p))
             .transform(cogwheel("Shaftless Industrial Gear", SoundType.NETHERITE_BLOCK, MapColor.COLOR_GRAY))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> LARGE_SHAFTLESS_INDUSTRIAL_GEAR = REG.block("shaftless_large_industrial_gear", p ->
                     CustomCogWheelBlock.largeShaftlessThick(GearsPartialModels.LARGE_SHAFTLESS_INDUSTRIAL_GEAR, p))
             .transform(cogwheel("Large Shaftless Industrial Gear", SoundType.NETHERITE_BLOCK, MapColor.COLOR_GRAY))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> BRASS_GEAR = REG.block("brass_gear", p ->
                     CustomCogWheelBlock.small(GearsPartialModels.SHAFTLESS_BRASS_GEAR, p))
             .transform(cogwheel("Brass Gear", SoundType.METAL, MapColor.TERRACOTTA_YELLOW))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> LARGE_BRASS_GEAR = REG.block("large_brass_gear", p ->
                     CustomCogWheelBlock.large(GearsPartialModels.SHAFTLESS_LARGE_BRASS_GEAR, p))
             .transform(cogwheel("Large Brass Gear", SoundType.METAL, MapColor.TERRACOTTA_YELLOW))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> HOLLOW_BRASS_GEAR = REG.block("hollow_brass_gear", p ->
                     CustomCogWheelBlock.smallHollowed(GearsPartialModels.HOLLOW_BRASS_GEAR, p))
             .transform(cogwheel("Hollowed Brass Gear", SoundType.METAL, MapColor.TERRACOTTA_YELLOW))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> LARGE_HOLLOW_BRASS_GEAR = REG.block("hollow_large_brass_gear", p ->
                     CustomCogWheelBlock.largeHollowed(GearsPartialModels.HOLLOW_LARGE_BRASS_GEAR, p))
             .transform(cogwheel("Large Hollowed Brass Gear", SoundType.METAL, MapColor.TERRACOTTA_YELLOW))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> SHAFTLESS_BRASS_GEAR = REG.block("shaftless_brass_gear", p ->
                     CustomCogWheelBlock.smallShaftless(GearsPartialModels.SHAFTLESS_BRASS_GEAR, p))
             .transform(cogwheel("Shaftless Brass Gear", SoundType.METAL, MapColor.TERRACOTTA_YELLOW))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> LARGE_SHAFTLESS_BRASS_GEAR = REG.block("shaftless_large_brass_gear", p ->
                     CustomCogWheelBlock.largeShaftless(GearsPartialModels.SHAFTLESS_LARGE_BRASS_GEAR, p))
             .transform(cogwheel("Large Shaftless Brass Gear", SoundType.METAL, MapColor.TERRACOTTA_YELLOW))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> HOLLOW_COGWHEEL = REG.block("hollow_cogwheel", p ->
                     CustomCogWheelBlock.smallHollowed(GearsPartialModels.HOLLOW_COG, p))
             .transform(cogwheel("Hollowed Cogwheel", SoundType.WOOD, MapColor.DIRT))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
     public static final BlockEntry<CustomCogWheelBlock> LARGE_HOLLOW_COGWHEEL = REG.block("hollow_large_cogwheel", p ->
                     CustomCogWheelBlock.largeHollowed(GearsPartialModels.HOLLOW_LARGE_COG, p))
             .transform(cogwheel("Large Hollowed Cogwheel", SoundType.WOOD, MapColor.DIRT))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .build()
             .register();
 
@@ -330,7 +357,7 @@ public class GearsBlocks {
                     CustomCogWheelBlock.smallShaftless(AllPartialModels.SHAFTLESS_COGWHEEL, p))
             .transform(cogwheel("Shaftless Cogwheel", SoundType.WOOD, MapColor.DIRT, false))
             .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, getBlockModelShaftless(false, c, p)))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .model((c, p) -> getItemModelShaftless(false, c, p))
             .build()
             .register();
@@ -339,7 +366,7 @@ public class GearsBlocks {
                     CustomCogWheelBlock.largeShaftless(AllPartialModels.SHAFTLESS_LARGE_COGWHEEL, p))
             .transform(cogwheel("Large Shaftless Cogwheel", SoundType.WOOD, MapColor.DIRT, false))
             .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, getBlockModelShaftless(true, c, p)))
-            .item(CustomCogWheelItem::new)
+            .item(ICogWheelItem::new)
             .model((c, p) -> getItemModelShaftless(true, c, p))
             .build()
             .register();

@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-06T17:55:57.7335789	Registrate Provider for gnkinetics [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+// 1.21.1	2025-08-16T19:13:18.8743845	Registrate Provider for gnkinetics [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
 5fa770a18f6ed1642b278fb4ff946053b8af9736 assets/gnkinetics/blockstates/andesite_cogwheel.json
 7c2b6b05f999d9f0b5600ef108bee716017005ad assets/gnkinetics/blockstates/brass_gear.json
 b483879f323e9db821376ecc1e6174ee852ef827 assets/gnkinetics/blockstates/chainable_cogwheel.json
@@ -13,6 +13,8 @@ a4871f3e482b3de212628e393e27dd4b645c4923 assets/gnkinetics/blockstates/hollow_la
 59d9f821367c1c0a40373e2764f3113d4cd6fcd2 assets/gnkinetics/blockstates/large_brass_gear.json
 c1160ed1e1d1f28a8c2ce666860e725a93e6b959 assets/gnkinetics/blockstates/large_cog_crank.json
 8b40ea1bce61588bf22aba78227507b91713cebf assets/gnkinetics/blockstates/large_industrial_gear.json
+2a6e8238f1970a3c3ec9bd22b97a096f377dd255 assets/gnkinetics/blockstates/large_magnet_gear.json
+60c800f531084a603caa114d92ee07dfaec3764a assets/gnkinetics/blockstates/magnet_gear.json
 9b5833d14aff6f53961786793b1ae31efc84fc8e assets/gnkinetics/blockstates/ring_gear.json
 3dff9e1ec59415779195d2abfa9f07bc17b428a1 assets/gnkinetics/blockstates/ring_gear_struct.json
 fe275d6316065dfc0332c8a0510d14372ed85b64 assets/gnkinetics/blockstates/shaftless_andesite_cogwheel.json
@@ -28,8 +30,8 @@ a772ac7fbdded11c993b942d7ccca44624575c26 assets/gnkinetics/blockstates/shaftless
 3ae7f951f17a3f1d95c6a517877556bef5be4d9b assets/gnkinetics/blockstates/tiny_brass_gear.json
 6c2b017a3f6cdeb29c0b111386bdef58d5f76ae3 assets/gnkinetics/blockstates/tiny_cogwheel.json
 30bb20c9a9e093d37b3c4312d60ba683f1e6f726 assets/gnkinetics/blockstates/worm_gear.json
-03c812de147c86e524b2abd988534631b25a2a66 assets/gnkinetics/lang/en_ud.json
-ad420f20a6c876a1301f309e473ff6bd5382cbd0 assets/gnkinetics/lang/en_us.json
+d6f845c6333c3f0247c01f976627f44b806d6c51 assets/gnkinetics/lang/en_ud.json
+f1fe76189ffb8f3cd7444d1f8fde7cdf3b3621c9 assets/gnkinetics/lang/en_us.json
 1f986ee272ead6c14e65a5127dbee361550b692d assets/gnkinetics/models/block/worm_gear_end_flipped.json
 353c0aeac56201dc37d23fd65769a1a47976ffe7 assets/gnkinetics/models/block/worm_gear_middle_flipped.json
 954f73575d4e9457ca962129d716aadd6ad5e297 assets/gnkinetics/models/block/worm_gear_single_flipped.json
@@ -48,6 +50,8 @@ b6c9250ae35e00dfd2469e381c20f2aae2fa4d59 assets/gnkinetics/models/item/industria
 b48eabe192042f312b0ce0956d84aa6dd2614f45 assets/gnkinetics/models/item/large_brass_gear.json
 dcbc5a5e00950ce391980d9d1e16b4fee8c122ac assets/gnkinetics/models/item/large_cog_crank.json
 f6f323f10a26c1665c9c6720d0deb2eec99c937b assets/gnkinetics/models/item/large_industrial_gear.json
+ec093203417e9dc67b82665d7c4c0138d31a9427 assets/gnkinetics/models/item/large_magnet_gear.json
+01052b6706f6574aea4fce00098ff489f697b55b assets/gnkinetics/models/item/magnet_gear.json
 0d301f7a4a926e4450acbd4fb8bcb6bb9cea0bef assets/gnkinetics/models/item/ring_gear.json
 a9a6f3d3fd28dcd8b70c5077a2ce18b890c8ffb6 assets/gnkinetics/models/item/shaftless_andesite_cogwheel.json
 72a0ca1136f688f36e834ba00d432059dc612f25 assets/gnkinetics/models/item/shaftless_brass_gear.json
@@ -81,6 +85,8 @@ b20aeaf17494fb2474ca168ca9ca155e9f282cf9 data/gnkinetics/loot_table/blocks/hollo
 93067e1c94216c14fba515aa89834674537d0aa3 data/gnkinetics/loot_table/blocks/large_brass_gear.json
 a924547882f189d87b21e5b319cdf97837876d5d data/gnkinetics/loot_table/blocks/large_cog_crank.json
 4e568fb2739315fa05f4b052f35f36c59343a144 data/gnkinetics/loot_table/blocks/large_industrial_gear.json
+97f851c3f1edc88774ac79c487c19f6a8cbbb350 data/gnkinetics/loot_table/blocks/large_magnet_gear.json
+3c938f74779534594776bb44a8fbf8380b1a02d3 data/gnkinetics/loot_table/blocks/magnet_gear.json
 795602501265b5d072a75b589faf5ff98bf9d559 data/gnkinetics/loot_table/blocks/ring_gear.json
 8d8f795844f44e79cd340c36f5d7c48486f54438 data/gnkinetics/loot_table/blocks/ring_gear_struct.json
 53951e32d70e9bc94d41b42981e7331861f9bfdd data/gnkinetics/loot_table/blocks/shaftless_andesite_cogwheel.json
@@ -100,4 +106,4 @@ f09cf6df5e0e788897415ff8c736f370982b55e6 data/gnkinetics/loot_table/blocks/worm_
 c833f37332bb6bcee0b5e0fb81db568d95d9990a data/gnkinetics/recipe/crafting/cog_crank_to_large.json
 27566cd02efefa370753a751e29c0d6da8f10af4 data/gnkinetics/recipe/crafting/large_cog_crank.json
 55932718f98b599913be4d9424d6f4c7323a4c62 data/minecraft/tags/block/mineable/axe.json
-7d8dc740e4bad7650baf4ca2cb5a11ce5267f794 data/minecraft/tags/block/mineable/pickaxe.json
+dee71cfdc4393dab92b4f67f27a5290594f12ba9 data/minecraft/tags/block/mineable/pickaxe.json

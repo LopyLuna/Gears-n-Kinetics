@@ -1,4 +1,4 @@
-package dev.lopyluna.gnkinetics.content.blocks.kinetics.custom_cogs;
+package dev.lopyluna.gnkinetics.content.blocks.kinetics;
 
 import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.kinetics.base.DirectionalKineticBlock;
@@ -20,6 +20,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.BlockHitResult;
@@ -29,16 +30,17 @@ import java.util.function.Predicate;
 
 import static dev.lopyluna.gnkinetics.content.blocks.kinetics.custom_cogs.CustomCogWheelBlock.isValidCogwheelPosition;
 
-public class CustomCogWheelItem extends BlockItem {
-
+public class ICogWheelItem extends BlockItem {
+    ICogWheel cog;
     boolean large;
 
     private final int placementHelperId;
     private final int integratedCogHelperId;
 
-    public CustomCogWheelItem(CustomCogWheelBlock block, Properties builder) {
+    public ICogWheelItem(Block block, Properties builder) {
         super(block, builder);
-        large = block.isLarge;
+        cog = (ICogWheel) block;
+        large = cog.isLargeCog();
 
         placementHelperId = PlacementHelpers.register(large ? new LargeCogHelper() : new SmallCogHelper());
         integratedCogHelperId = PlacementHelpers.register(large ? new IntegratedLargeCogHelper() : new IntegratedSmallCogHelper());

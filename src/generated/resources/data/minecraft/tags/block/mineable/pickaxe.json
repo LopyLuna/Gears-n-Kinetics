@@ -5,6 +5,8 @@
     "gnkinetics:cog_crank",
     "gnkinetics:large_cog_crank",
     "gnkinetics:worm_gear",
+    "gnkinetics:magnet_gear",
+    "gnkinetics:large_magnet_gear",
     "gnkinetics:ring_gear",
     "gnkinetics:ring_gear_struct",
     "gnkinetics:tiny_cogwheel",

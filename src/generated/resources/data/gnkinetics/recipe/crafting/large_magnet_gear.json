@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      {
+        "item": "gnkinetics:large_industrial_gear"
+      },
+      {
+        "item": "gnkinetics:shaftless_large_industrial_gear"
+      }
+    ],
+    {
+      "item": "create:transmitter"
+    },
+    {
+      "item": "create:transmitter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnkinetics:large_magnet_gear"
+  }
+}

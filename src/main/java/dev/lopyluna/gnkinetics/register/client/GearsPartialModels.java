@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public class GearsPartialModels {
     public static final PartialModel
             COG_CRANK_HANDLE = block("cog_crank/handle"),
@@ -38,6 +39,11 @@ public class GearsPartialModels {
 
             TINY_BRASS_COG = block("tiny_brass_gear"),
             SHAFTLESS_TINY_BRASS_COG = block("shaftless_tiny_brass_gear"),
+
+            MAGNET_GEAR = block("magnet_gear/small"),
+            SHAFTLESS_MAGNET_GEAR = block("magnet_gear/small_shaftless"),
+            LARGE_MAGNET_GEAR = block("magnet_gear/large"),
+            SHAFTLESS_LARGE_MAGNET_GEAR = block("magnet_gear/large_shaftless"),
 
             RING_GEAR = block("ring_gear/block")
     ;

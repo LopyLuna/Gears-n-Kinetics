@@ -19,6 +19,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.ICondition;
@@ -34,6 +35,17 @@ import java.util.function.UnaryOperator;
 @SuppressWarnings({"unused", "SameParameterValue"})
 public class VanillaRecipeGen extends BaseRecipeProvider {
     final List<GeneratedRecipe> all = new ArrayList<>();
+
+    GeneratedRecipe MAGNET_GEAR = create(GearsBlocks.MAGNET_GEAR).unlockedBy(AllItems.TRANSMITTER::get)
+            .viaShapeless(b -> b
+                    .requires(Ingredient.of(GearsBlocks.INDUSTRIAL_GEAR.get(), GearsBlocks.SHAFTLESS_INDUSTRIAL_GEAR.get()))
+                    .requires(AllItems.TRANSMITTER));
+
+    GeneratedRecipe LARGE_MAGNET_GEAR = create(GearsBlocks.LARGE_MAGNET_GEAR).unlockedBy(AllItems.TRANSMITTER::get)
+            .viaShapeless(b -> b
+                    .requires(Ingredient.of(GearsBlocks.LARGE_INDUSTRIAL_GEAR.get(), GearsBlocks.LARGE_SHAFTLESS_INDUSTRIAL_GEAR.get()))
+                    .requires(AllItems.TRANSMITTER)
+                    .requires(AllItems.TRANSMITTER));
 
     GeneratedRecipe WORM_GEAR = create(GearsBlocks.WORM_GEAR).returns(8).unlockedBy(AllItems.IRON_SHEET::get)
             .viaShaped(b -> b

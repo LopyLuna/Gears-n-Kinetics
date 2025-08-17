@@ -1,0 +1,108 @@
+{
+  "variants": {
+    "axis=x,bottom_shaft=false,powered=false,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_shaft=false,powered=false,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_shaft=false,powered=true,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_shaft=false,powered=true,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_shaft=true,powered=false,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_shaft=true,powered=false,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_shaft=true,powered=true,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_shaft=true,powered=true,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,bottom_shaft=false,powered=false,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless"
+    },
+    "axis=y,bottom_shaft=false,powered=false,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless"
+    },
+    "axis=y,bottom_shaft=false,powered=true,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless"
+    },
+    "axis=y,bottom_shaft=false,powered=true,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless"
+    },
+    "axis=y,bottom_shaft=true,powered=false,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless"
+    },
+    "axis=y,bottom_shaft=true,powered=false,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless"
+    },
+    "axis=y,bottom_shaft=true,powered=true,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless"
+    },
+    "axis=y,bottom_shaft=true,powered=true,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless"
+    },
+    "axis=z,bottom_shaft=false,powered=false,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,bottom_shaft=false,powered=false,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,bottom_shaft=false,powered=true,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,bottom_shaft=false,powered=true,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,bottom_shaft=true,powered=false,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,bottom_shaft=true,powered=false,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,bottom_shaft=true,powered=true,top_shaft=false": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 180
+    },
+    "axis=z,bottom_shaft=true,powered=true,top_shaft=true": {
+      "model": "gnkinetics:block/magnet_gear/large_shaftless",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

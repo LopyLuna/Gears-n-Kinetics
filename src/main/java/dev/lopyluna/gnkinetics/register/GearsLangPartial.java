@@ -12,7 +12,7 @@ public class GearsLangPartial {
         REG.addRawLang(desc(cc, "already_connected"), "Cogwheels are already connected");
         REG.addRawLang(desc(cc, "blocks_invalid"), "Cogwheels blocks invalid, Sneak-click to reset");
         REG.addRawLang(desc(cc, "cannot_add_more_connections"), "Cannot add more connections to this Cogwheel");
-        REG.addRawLang(desc(cc, "cannot_connect_vertically"), "Cannot connect axis above/below direction");
+        REG.addRawLang(desc(cc, "cannot_connect_vertically"), "Chains cannot be tilted in the axis direction");
         REG.addRawLang(desc(cc, "cannot_connect_axis"), "Cannot connect axis cogwheels");
         REG.addRawLang(desc(cc, "not_enough_chains"), "Not holding enough chains");
         REG.addRawLang(desc(cc, "select_second"), "Select a second cogwheel to connect");

@@ -19,6 +19,9 @@ import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankVisual;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.creative_gear_motor.CreativeGearMotorBE;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.creative_gear_motor.GearMotorRenderer;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.custom_cogs.CustomCogWheelRenderer;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.magnet_gears.MagnetGearBE;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.magnet_gears.MagnetGearRenderer;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.magnet_gears.MagnetGearVisual;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearBE;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.tiny_cog.TinyCogBE;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.tiny_cog.TinyCogBlock;
@@ -30,6 +33,21 @@ import net.minecraft.core.Direction;
 import static dev.lopyluna.gnkinetics.Gears.REG;
 
 public class GearsBETypes {
+    // TODO: WHEN POSSIBLE RE-IMPLEMENT VISUALS + FEATURES WITHIN VISUALS | Visuals/Rotation offset been bit buggy so I am using the renderer with a weird fix instead
+
+    public static final BlockEntityEntry<MagnetGearBE> MAGNET_GEAR = REG
+            .blockEntity("magnet_gear", MagnetGearBE::new)
+            .visual(() -> MagnetGearVisual::small, true)
+            .validBlocks(GearsBlocks.MAGNET_GEAR)
+            .renderer(() -> MagnetGearRenderer::small)
+            .register();
+
+    public static final BlockEntityEntry<MagnetGearBE> LARGE_MAGNET_GEAR = REG
+            .blockEntity("large_magnet_gear", MagnetGearBE::new)
+            .visual(() -> MagnetGearVisual::large, true)
+            .validBlocks(GearsBlocks.LARGE_MAGNET_GEAR)
+            .renderer(() -> MagnetGearRenderer::large)
+            .register();
 
     public static final BlockEntityEntry<ChainableCogwheelBE> CHAINABLE_COGWHEEL = REG
             .blockEntity("chainable_cogwheel", ChainableCogwheelBE::new)
@@ -97,7 +115,6 @@ public class GearsBETypes {
             )
             .renderer(() -> CustomCogWheelRenderer::new)
             .register();
-
 
     public static BlockEntityVisual<? super WormGearBE> wormGear(VisualizationContext visualizationContext, WormGearBE wormGearBE, float partialTick) {
         var blockState = wormGearBE.getBlockState();
