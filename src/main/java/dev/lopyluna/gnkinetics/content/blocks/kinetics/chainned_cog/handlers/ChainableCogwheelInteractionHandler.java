@@ -5,7 +5,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.kinetics.chainConveyor.ChainConveyorShape;
-import com.simibubi.create.foundation.utility.RaycastHelper;
 import com.simibubi.create.foundation.utility.TickBasedCache;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.chainned_cog.packets.ChainableCogwheelConnectionPacket;
 import dev.lopyluna.gnkinetics.mixins.ChainConveyorOBBAccessor;
@@ -58,8 +57,10 @@ public class ChainableCogwheelInteractionHandler {
         boolean dismantling = isWrench && mc.player.isShiftKeyDown();
         double range = mc.player.getAttributeValue(Attributes.BLOCK_INTERACTION_RANGE) + 1;
 
-        Vec3 from = RaycastHelper.getTraceOrigin(mc.player);
-        Vec3 to = RaycastHelper.getTraceTarget(mc.player, range, from);
+        float pt = mc.getFrameTime();
+        Vec3 from = mc.player.getEyePosition(pt);
+        Vec3 look = mc.player.getViewVector(pt);
+        Vec3 to = from.add(look.scale(range));
         HitResult hitResult = mc.hitResult;
 
         double bestDiff = Float.MAX_VALUE;
