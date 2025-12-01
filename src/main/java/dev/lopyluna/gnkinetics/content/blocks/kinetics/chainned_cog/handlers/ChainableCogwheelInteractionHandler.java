@@ -58,7 +58,7 @@ public class ChainableCogwheelInteractionHandler {
         boolean dismantling = isWrench && mc.player.isShiftKeyDown();
         double range = mc.player.getAttributeValue(Attributes.BLOCK_INTERACTION_RANGE) + 1;
 
-        Vec3 from = RaycastHelper.getTraceOrigin(mc.player);
+        Vec3 from = mc.player.getEyePosition();
         Vec3 to = RaycastHelper.getTraceTarget(mc.player, range, from);
         HitResult hitResult = mc.hitResult;
 
