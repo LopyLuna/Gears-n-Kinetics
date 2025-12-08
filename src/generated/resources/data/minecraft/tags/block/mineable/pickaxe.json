@@ -9,6 +9,8 @@
     "gnkinetics:large_magnet_gear",
     "gnkinetics:ring_gear",
     "gnkinetics:ring_gear_struct",
+    "gnkinetics:planetary_gear",
+    "gnkinetics:planetary_gear_struct",
     "gnkinetics:tiny_cogwheel",
     "gnkinetics:shaftless_tiny_cogwheel",
     "gnkinetics:tiny_brass_gear",

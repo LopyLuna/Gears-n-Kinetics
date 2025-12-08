@@ -1,4 +1,4 @@
-package dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear;
+package dev.lopyluna.gnkinetics.content.blocks.kinetics.planetary_gear;
 
 import com.mojang.serialization.MapCodec;
 import com.simibubi.create.api.equipment.goggles.IProxyHoveringInformation;
@@ -7,7 +7,6 @@ import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.content.kinetics.waterwheel.WaterWheelStructuralBlock;
 import com.simibubi.create.foundation.block.render.MultiPosDestructionHandler;
-import dev.lopyluna.gnkinetics.content.blocks.kinetics.planetary_gear.PlanetaryGearBlock;
 import dev.lopyluna.gnkinetics.register.GearsBlocks;
 import dev.lopyluna.gnkinetics.register.GearsShapes;
 import net.createmod.catnip.placement.IPlacementHelper;
@@ -56,23 +55,20 @@ import java.util.Set;
 import java.util.function.Predicate;
 
 @ParametersAreNonnullByDefault
-public class RingGearStructure extends DirectionalBlock implements IWrenchable, IProxyHoveringInformation {
-    private static final int ringGearHelperId = PlacementHelpers.register(new RingGearHelper());
-    private static final int largeCogHelperId = PlacementHelpers.register(new LargeCogHelper());
+public class PlanetaryGearStructure extends DirectionalBlock implements IWrenchable, IProxyHoveringInformation {
+    private static final int planetaryGearHelperId = PlacementHelpers.register(new PlanetaryGearHelper());
     private static final int smallCogHelperId = PlacementHelpers.register(new SmallCogHelper());
-    public static final MapCodec<RingGearStructure> CODEC = simpleCodec(RingGearStructure::new);
-    public RingGearStructure(Properties properties) {
+    public static final MapCodec<PlanetaryGearStructure> CODEC = simpleCodec(PlanetaryGearStructure::new);
+    public PlanetaryGearStructure(Properties properties) {
         super(properties);
     }
 
     @Override
     protected @NotNull ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        var ringGear = PlacementHelpers.get(ringGearHelperId);
-        var largeCog = PlacementHelpers.get(largeCogHelperId);
+        var planetaryGear = PlacementHelpers.get(planetaryGearHelperId);
         var smallCog = PlacementHelpers.get(smallCogHelperId);
         IPlacementHelper placer = null;
-        if (ringGear.matchesItem(stack)) placer = ringGear;
-        if (largeCog.matchesItem(stack)) placer = largeCog;
+        if (planetaryGear.matchesItem(stack)) placer = planetaryGear;
         if (smallCog.matchesItem(stack)) placer = smallCog;
         if (placer != null) return placer.getOffset(player, level, state, pos, hitResult).placeInWorld(level, (BlockItem) stack.getItem(), player, hand, hitResult);
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
@@ -88,8 +84,8 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
     protected @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         var masterPos = getMaster(level, pos, state);
         var masterState = level.getBlockState(masterPos);
-        if (masterState.getBlock() instanceof RingGearBlock)
-            return GearsShapes.shape(GearsShapes.cuboid(0, 4, 0, 16, 12, 16)).forAxis().get(masterState.getValue(RingGearBlock.AXIS));
+        if (masterState.getBlock() instanceof PlanetaryGearBlock)
+            return GearsShapes.shape(GearsShapes.cuboid(0, 4, 0, 16, 12, 16)).forAxis().get(masterState.getValue(PlanetaryGearBlock.AXIS));
         return context instanceof EntityCollisionContext eContext && eContext.getEntity() != null ? Shapes.empty() : Shapes.block();
     }
 
@@ -133,7 +129,7 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
 
     @Override
     public @NotNull ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player) {
-        return GearsBlocks.RING_GEAR.asStack();
+        return GearsBlocks.PLANETARY_GEAR.asStack();
     }
 
     @Override
@@ -167,7 +163,7 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
     public @NotNull BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
         if (stillValid(pLevel, pCurrentPos, pState, false)) {
             var masterPos = getMaster(pLevel, pCurrentPos, pState);
-            if (!pLevel.getBlockTicks().hasScheduledTick(masterPos, GearsBlocks.RING_GEAR.get())) pLevel.scheduleTick(masterPos, GearsBlocks.RING_GEAR.get(), 1);
+            if (!pLevel.getBlockTicks().hasScheduledTick(masterPos, GearsBlocks.PLANETARY_GEAR.get())) pLevel.scheduleTick(masterPos, GearsBlocks.PLANETARY_GEAR.get(), 1);
             return pState;
         }
         if (!(pLevel instanceof Level level) || level.isClientSide()) return pState;
@@ -179,7 +175,7 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
         var direction = state.getValue(FACING);
         var targetedPos = pos.relative(direction);
         var targetedState = level.getBlockState(targetedPos);
-        if (targetedState.is(GearsBlocks.RING_GEAR_STRUCT.get())) return getMaster(level, targetedPos, targetedState);
+        if (targetedState.is(GearsBlocks.PLANETARY_GEAR_STRUCT.get())) return getMaster(level, targetedPos, targetedState);
         return targetedPos;
     }
 
@@ -190,7 +186,7 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
         var targetedState = level.getBlockState(targetedPos);
 
         if (!directlyAdjacent && stillValid(level, targetedPos, targetedState, true)) return true;
-        return targetedState.getBlock() instanceof RingGearBlock && targetedState.getValue(RingGearBlock.AXIS) != direction.getAxis();
+        return targetedState.getBlock() instanceof PlanetaryGearBlock && targetedState.getValue(PlanetaryGearBlock.AXIS) != direction.getAxis();
     }
 
     @Override
@@ -214,7 +210,7 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
         public boolean addHitEffects(BlockState state, Level level, HitResult target, ParticleEngine manager) {
             if (target instanceof BlockHitResult bhr) {
                 var targetPos = bhr.getBlockPos();
-                var structure = GearsBlocks.RING_GEAR_STRUCT.get();
+                var structure = GearsBlocks.PLANETARY_GEAR_STRUCT.get();
                 if (structure.stillValid(level, targetPos, state, false)) manager.crack(getMaster(level, targetPos, state), bhr.getDirection());
                 return true;
             }
@@ -224,7 +220,7 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
         @Override
         @Nullable
         public Set<BlockPos> getExtraPositions(ClientLevel level, BlockPos pos, BlockState blockState, int progress) {
-            var structure = GearsBlocks.RING_GEAR_STRUCT.get();
+            var structure = GearsBlocks.PLANETARY_GEAR_STRUCT.get();
             if (!structure.stillValid(level, pos, blockState, false)) return null;
             HashSet<BlockPos> set = new HashSet<>();
             set.add(WaterWheelStructuralBlock.getMaster(level, pos, blockState));
@@ -238,15 +234,15 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
     }
 
     @MethodsReturnNonnullByDefault
-    private static class RingGearHelper implements IPlacementHelper {
+    private static class PlanetaryGearHelper implements IPlacementHelper {
         @Override
         public Predicate<ItemStack> getItemPredicate() {
-            return i -> i.is(GearsBlocks.RING_GEAR.asItem()) || i.is(GearsBlocks.PLANETARY_GEAR.asItem());
+            return i -> i.is(GearsBlocks.PLANETARY_GEAR.asItem()) || i.is(GearsBlocks.RING_GEAR.asItem());
         }
 
         @Override
         public Predicate<BlockState> getStatePredicate() {
-            return s -> s.getBlock() instanceof RingGearStructure;
+            return s -> s.getBlock() instanceof PlanetaryGearStructure;
         }
 
         @Override
@@ -257,44 +253,12 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
             var gear = level.getBlockState(pos.relative(dir));
             var placePos = pos.relative(placeDir, 2);
             var placeState = level.getBlockState(placePos);
-            if ((gear.is(GearsBlocks.RING_GEAR) || gear.is(GearsBlocks.PLANETARY_GEAR)) && faceAxis != dir.getAxis()  && (placeState.isEmpty() || placeState.canBeReplaced()) && placeState.canSurvive(level, placePos) && RingGearBlock.canPlace(faceAxis, placePos, level)) {
-                var axis = gear.getValue(RingGearBlock.AXIS);
+            if ((gear.is(GearsBlocks.PLANETARY_GEAR) || gear.is(GearsBlocks.RING_GEAR)) && faceAxis != dir.getAxis()  && (placeState.isEmpty() || placeState.canBeReplaced()) && placeState.canSurvive(level, placePos) && PlanetaryGearBlock.canPlace(faceAxis, placePos, level)) {
+                var axis = gear.getValue(PlanetaryGearBlock.AXIS);
                 return PlacementOffset.success(placePos, s -> {
                     var newState = (PlanetaryGearBlock.calculateAxisDir(s, axis, ray.getDirection(), player.getNearestViewDirection(), player, true));
                     if (s.hasProperty(BlockStateProperties.AXIS)) newState = newState.setValue(BlockStateProperties.AXIS, axis);
                     if (s.hasProperty(BlockStateProperties.FACING)) newState = newState.setValue(BlockStateProperties.FACING, Direction.fromAxisAndDirection(axis, Direction.AxisDirection.POSITIVE));
-                    return newState;
-                });
-            }
-            return PlacementOffset.fail();
-        }
-    }
-
-    @MethodsReturnNonnullByDefault
-    private static class LargeCogHelper implements IPlacementHelper {
-        @Override
-        public Predicate<ItemStack> getItemPredicate() {
-            return ((Predicate<ItemStack>) ICogWheel::isLargeCogItem).and(ICogWheel::isDedicatedCogItem);
-        }
-
-        @Override
-        public Predicate<BlockState> getStatePredicate() {
-            return s -> s.getBlock() instanceof RingGearStructure;
-        }
-
-        @Override
-        public PlacementOffset getOffset(Player player, Level level, BlockState state, BlockPos pos, BlockHitResult ray) {
-            var dir = state.getValue(SailBlock.FACING);
-            var placeAxis = dir.getAxis();
-            var face = ray.getDirection();
-            var gear = level.getBlockState(pos.relative(dir));
-            var placePos = pos.relative(face);
-            var placeState = level.getBlockState(placePos);
-            if ((gear.is(GearsBlocks.RING_GEAR) || gear.is(GearsBlocks.PLANETARY_GEAR)) && face.getAxis() != placeAxis && (placeState.isEmpty() || placeState.canBeReplaced()) && placeState.canSurvive(level, placePos)) {
-                return PlacementOffset.success(placePos, s -> {
-                    var newState = (PlanetaryGearBlock.calculateAxisDir(s, placeAxis, face, player.getNearestViewDirection(), player, true));
-                    if (s.hasProperty(BlockStateProperties.AXIS)) newState = newState.setValue(BlockStateProperties.AXIS, placeAxis);
-                    if (s.hasProperty(BlockStateProperties.FACING)) newState = newState.setValue(BlockStateProperties.FACING, Direction.fromAxisAndDirection(placeAxis, Direction.AxisDirection.POSITIVE));
                     return newState;
                 });
             }
@@ -311,7 +275,7 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
 
         @Override
         public Predicate<BlockState> getStatePredicate() {
-            return s -> s.getBlock() instanceof RingGearStructure;
+            return s -> s.getBlock() instanceof PlanetaryGearStructure;
         }
 
         @Override
@@ -322,8 +286,8 @@ public class RingGearStructure extends DirectionalBlock implements IWrenchable, 
             var gear = level.getBlockState(pos.relative(dir));
             var placePos = pos.relative(placeDir);
             var placeState = level.getBlockState(placePos);
-            if ((gear.is(GearsBlocks.RING_GEAR) || gear.is(GearsBlocks.PLANETARY_GEAR)) && (placeState.isEmpty() || placeState.canBeReplaced()) && placeState.canSurvive(level, placePos)) {
-                var axis = gear.getValue(RingGearBlock.AXIS);
+            if ((gear.is(GearsBlocks.PLANETARY_GEAR) || gear.is(GearsBlocks.RING_GEAR)) && (placeState.isEmpty() || placeState.canBeReplaced()) && placeState.canSurvive(level, placePos)) {
+                var axis = gear.getValue(PlanetaryGearBlock.AXIS);
                 return PlacementOffset.success(placePos, s -> {
                     var newState = (PlanetaryGearBlock.calculateAxisDir(s, axis, ray.getDirection(), player.getNearestViewDirection(), player, true));
                     if (s.hasProperty(BlockStateProperties.AXIS)) newState = newState.setValue(BlockStateProperties.AXIS, axis);

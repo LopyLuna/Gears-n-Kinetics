@@ -1,0 +1,4 @@
+# Made in Blockbench 4.12.1
+newmtl ring_gear
+map_Kd #ring_gear
+newmtl none

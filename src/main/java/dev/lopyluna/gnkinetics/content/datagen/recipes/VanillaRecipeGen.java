@@ -63,6 +63,14 @@ public class VanillaRecipeGen extends BaseRecipeProvider {
                     .pattern("bgb")
                     .pattern("bbb"));
 
+    GeneratedRecipe PLANETARY_GEAR = create(GearsBlocks.PLANETARY_GEAR).unlockedBy(AllItems.BRASS_INGOT::get)
+            .viaShaped(b -> b
+                    .define('b', GearsTags.commonItemTag("ingots/brass"))
+                    .define('g', GearsBlocks.RING_GEAR)
+                    .pattern(" b ")
+                    .pattern("bgb")
+                    .pattern(" b "));
+
 
     GeneratedRecipe CHAINABLE_COGWHEEL = create(GearsBlocks.CHAINABLE_COGWHEEL).unlockedBy(AllBlocks.ANDESITE_CASING::get)
             .viaShapeless(b -> b

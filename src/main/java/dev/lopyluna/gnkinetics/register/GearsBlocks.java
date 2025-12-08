@@ -25,6 +25,9 @@ import dev.lopyluna.gnkinetics.content.blocks.kinetics.cog_crank.CogCrankItem;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.creative_gear_motor.CreativeGearMotorBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.custom_cogs.CustomCogWheelBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.magnet_gears.MagnetGearBlock;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.planetary_gear.PlanetaryGearBlock;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.planetary_gear.PlanetaryGearItem;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.planetary_gear.PlanetaryGearStructure;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearItem;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearStructure;
@@ -193,6 +196,27 @@ public class GearsBlocks {
             .properties(p -> p.noOcclusion().isSuffocating(GearsBlocks::never).sound(SoundType.METAL).mapColor(MapColor.TERRACOTTA_YELLOW))
             .transform(pickaxeOnly())
             .lang("Ring Gear")
+            .register();
+
+    public static final BlockEntry<PlanetaryGearBlock> PLANETARY_GEAR = REG.block("planetary_gear", PlanetaryGearBlock::new)
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p.noOcclusion().isSuffocating(GearsBlocks::never).sound(SoundType.METAL).mapColor(MapColor.TERRACOTTA_YELLOW))
+            .transform(pickaxeOnly())
+            .blockstate((c, p) -> BlockStateGen.axisBlock(c, p, getBlockModel(true, c, p)))
+            .addLayer(() -> RenderType::cutoutMipped)
+            .transform(GStress.setNoImpact())
+            .lang("Planetary Gear")
+            .item(PlanetaryGearItem::new)
+            .transform(customItemModel())
+            .register();
+
+    public static final BlockEntry<PlanetaryGearStructure> PLANETARY_GEAR_STRUCT = REG.block("planetary_gear_struct", PlanetaryGearStructure::new)
+            .initialProperties(SharedProperties::wooden)
+            .clientExtension(() -> PlanetaryGearStructure.RenderProperties::new)
+            .blockstate((c, p) -> p.getVariantBuilder(c.get()).forAllStatesExcept(BlockStateGen.mapToAir(p), PlanetaryGearStructure.FACING))
+            .properties(p -> p.noOcclusion().isSuffocating(GearsBlocks::never).sound(SoundType.METAL).mapColor(MapColor.TERRACOTTA_YELLOW))
+            .transform(pickaxeOnly())
+            .lang("Planetary Gear")
             .register();
 
     public static final BlockEntry<TinyCogBlock> TINY_COG = REG.block("tiny_cogwheel", TinyCogBlock::shaft)

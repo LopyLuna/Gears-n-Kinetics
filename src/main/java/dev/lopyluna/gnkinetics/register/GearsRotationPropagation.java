@@ -28,8 +28,8 @@ public class GearsRotationPropagation {
             var axis = getAxis(stateFrom);
             for (var dir : Iterate.directions) if (dir.getAxis() != axis) {
                 var dif = diff.get(dir.getAxis());
-                if (Mth.abs(dif) == 2 && ICogWheel.isSmallCog(stateFrom) && stateTo.is(GearsBlocks.RING_GEAR)) return -0.25f;
-                if (Mth.abs(dif) == 2 && ICogWheel.isSmallCog(stateTo) && stateFrom.is(GearsBlocks.RING_GEAR)) return -4f;
+                if (Mth.abs(dif) == 2 && ICogWheel.isSmallCog(stateFrom) && (stateTo.is(GearsBlocks.RING_GEAR) || stateTo.is(GearsBlocks.PLANETARY_GEAR))) return -0.25f;
+                if (Mth.abs(dif) == 2 && ICogWheel.isSmallCog(stateTo) && (stateFrom.is(GearsBlocks.RING_GEAR) || stateFrom.is(GearsBlocks.PLANETARY_GEAR))) return -4f;
 
                 var f = dir.getNormal().equals(diff);
                 if (f && isLargeFrom && TinyCogBlock.isTinyCog(stateTo)) return -4f;

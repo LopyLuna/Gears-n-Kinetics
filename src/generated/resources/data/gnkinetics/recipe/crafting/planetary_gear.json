@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:ingots/brass"
+    },
+    "g": {
+      "item": "gnkinetics:ring_gear"
+    }
+  },
+  "pattern": [
+    " b ",
+    "bgb",
+    " b "
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnkinetics:planetary_gear"
+  }
+}

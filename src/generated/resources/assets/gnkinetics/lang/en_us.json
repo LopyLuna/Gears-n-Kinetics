@@ -15,6 +15,8 @@
   "block.gnkinetics.large_industrial_gear": "Large Industrial Gear",
   "block.gnkinetics.large_magnet_gear": "Large Magnet Gear",
   "block.gnkinetics.magnet_gear": "Magnet Gear",
+  "block.gnkinetics.planetary_gear": "Planetary Gear",
+  "block.gnkinetics.planetary_gear_struct": "Planetary Gear",
   "block.gnkinetics.ring_gear": "Ring Gear",
   "block.gnkinetics.ring_gear_struct": "Ring Gear",
   "block.gnkinetics.shaftless_andesite_cogwheel": "Shaftless Andesite Cogwheel",

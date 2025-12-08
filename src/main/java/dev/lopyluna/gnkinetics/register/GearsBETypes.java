@@ -22,6 +22,8 @@ import dev.lopyluna.gnkinetics.content.blocks.kinetics.custom_cogs.CustomCogWhee
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.magnet_gears.MagnetGearBE;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.magnet_gears.MagnetGearRenderer;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.magnet_gears.MagnetGearVisual;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.planetary_gear.PlanetaryGearBE;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.planetary_gear.PlanetaryGearVisual;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearBE;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.tiny_cog.TinyCogBE;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.tiny_cog.TinyCogBlock;
@@ -87,6 +89,13 @@ public class GearsBETypes {
             .blockEntity("ring_gear", RingGearBE::new)
             .visual(() -> SingleAxisRotatingVisual.of(GearsPartialModels.RING_GEAR), false)
             .validBlocks(GearsBlocks.RING_GEAR)
+            .renderer(() -> KineticBlockEntityRenderer::new)
+            .register();
+
+    public static final BlockEntityEntry<PlanetaryGearBE> PLANETARY_GEAR = REG
+            .blockEntity("planetary_gear", PlanetaryGearBE::new)
+            .visual(() -> PlanetaryGearVisual::new, false)
+            .validBlocks(GearsBlocks.PLANETARY_GEAR)
             .renderer(() -> KineticBlockEntityRenderer::new)
             .register();
 

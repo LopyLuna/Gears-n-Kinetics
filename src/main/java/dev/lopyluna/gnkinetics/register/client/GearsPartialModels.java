@@ -45,6 +45,14 @@ public class GearsPartialModels {
             LARGE_MAGNET_GEAR = block("magnet_gear/large"),
             SHAFTLESS_LARGE_MAGNET_GEAR = block("magnet_gear/large_shaftless"),
 
+            PLANETARY_RING_GEAR = block("planetary_gear/block"),
+            PLANETARY_PLANET_GEAR = block("planetary_gear/planet_gear"),
+            PLANETARY_SUN_GEAR = block("planetary_gear/sun_gear"),
+
+            PLANETARY_MODE_0 = block("planetary_gear/mode_0"),
+            PLANETARY_MODE_1 = block("planetary_gear/mode_1"),
+            PLANETARY_MODE_2 = block("planetary_gear/mode_2"),
+
             RING_GEAR = block("ring_gear/block")
     ;
 
@@ -55,6 +63,14 @@ public class GearsPartialModels {
             var key = new WormGearKey(part, flipped);
             WORM_GEARS.put(key, PartialModel.of(key.name()));
         }
+    }
+
+    public static PartialModel getPlanetaryMode(int mode) {
+        return switch (mode) {
+            case 1 -> PLANETARY_MODE_1;
+            case 2 -> PLANETARY_MODE_2;
+            default -> PLANETARY_MODE_0;
+        };
     }
 
     public record WormGearKey(GantryShaftBlock.Part part, boolean flipped) {

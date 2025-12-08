@@ -1,0 +1,11 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"brass_gear": "gnkinetics:block/brass_gear",
+		"particle": "create:block/brass_block"
+	},
+	"loader": "neoforge:obj",
+	"flip_v": true,
+	"model": "gnkinetics:models/block/planetary_gear/planet_gear.obj"
+}

@@ -8,6 +8,7 @@ import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.foundation.utility.BlockHelper;
 import dev.lopyluna.gnkinetics.Gears;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.custom_cogs.CustomCogWheelBlock;
+import dev.lopyluna.gnkinetics.content.blocks.kinetics.planetary_gear.PlanetaryGearBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.ring_gear.RingGearBlock;
 import dev.lopyluna.gnkinetics.content.blocks.kinetics.tiny_cog.TinyCogBlock;
 import dev.lopyluna.gnkinetics.register.GearsBlocks;
@@ -134,7 +135,7 @@ public class ServerEvents {
     private static class RingGearSmallCogHelper implements IPlacementHelper {
         @Override
         public Predicate<ItemStack> getItemPredicate() {
-            return i -> i.is(GearsBlocks.RING_GEAR.asItem());
+            return i -> i.is(GearsBlocks.RING_GEAR.asItem()) || i.is(GearsBlocks.PLANETARY_GEAR.asItem());
         }
 
         @Override
@@ -153,7 +154,7 @@ public class ServerEvents {
                     if (!RingGearBlock.canPlace(axis, newPos, level)) continue;
 
                     if (!level.getBlockState(newPos).canBeReplaced()) continue;
-                    return PlacementOffset.success(newPos, s -> s.setValue(AXIS, axis));
+                    return PlacementOffset.success(newPos, s -> (PlanetaryGearBlock.calculateAxisDir(s, axis, player.getNearestViewDirection(), player.getNearestViewDirection(), player, false)).setValue(AXIS, axis));
 
                 }
             }

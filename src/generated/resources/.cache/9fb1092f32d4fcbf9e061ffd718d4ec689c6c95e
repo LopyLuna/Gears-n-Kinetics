@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-16T21:36:31.4360358	Recipes
+// 1.21.1	2025-12-01T19:22:04.573066	Recipes
 18d9f629ee0361b415ab0c859f5a8b8474f4cb4a data/gnkinetics/advancement/recipes/misc/crafting/andesite_cogwheel.json
 bf767d4c7682c6799d2c6206ae685f8db0a5e3df data/gnkinetics/advancement/recipes/misc/crafting/andesite_cogwheel_from_conversion.json
 4d254f2c789aba803c0d9ebda270aaad9718cc4e data/gnkinetics/advancement/recipes/misc/crafting/brass_gear.json
@@ -21,6 +21,7 @@ f3625bf355d69a9e7d878d26fa2eba7a6adecc6e data/gnkinetics/advancement/recipes/mis
 3b2430c428f2dfa669205a423a5727302b786b1a data/gnkinetics/advancement/recipes/misc/crafting/large_industrial_gear_from_conversion.json
 c3224569895055e0787719f230c7d6d1c217f094 data/gnkinetics/advancement/recipes/misc/crafting/large_magnet_gear.json
 f942b5c24e04694580f312386d914707c174f7cb data/gnkinetics/advancement/recipes/misc/crafting/magnet_gear.json
+5ccc639c04d95cfe2ace780457b9d999fdf30e9a data/gnkinetics/advancement/recipes/misc/crafting/planetary_gear.json
 8499763b6d60e14ffc4a86610fcfec0cca03147e data/gnkinetics/advancement/recipes/misc/crafting/ring_gear.json
 d56e1759178877e7c0f03ec9dfadae44f22f6e5f data/gnkinetics/advancement/recipes/misc/crafting/shaftless_andesite_cogwheel_from_conversion.json
 7aa5b314b651b6ce3c68edeb8ebd3c8a218f2b30 data/gnkinetics/advancement/recipes/misc/crafting/shaftless_brass_gear_from_conversion.json
@@ -59,6 +60,7 @@ c9b4c606df48cd89822512df507b99b06e7266b0 data/gnkinetics/recipe/crafting/industr
 37c4541ea5c8e50cc03542c38a124da1d0f1471a data/gnkinetics/recipe/crafting/large_industrial_gear_from_conversion.json
 b3d94702021fe6b5378e316c6b96d6a74e689466 data/gnkinetics/recipe/crafting/large_magnet_gear.json
 f10f66f266c56f89ba9adcfead5e77dd1e681374 data/gnkinetics/recipe/crafting/magnet_gear.json
+cf1c17cbfad318408354d945f770ea3d539882bb data/gnkinetics/recipe/crafting/planetary_gear.json
 7baf48936575130d27bb736c6b125cac06b1f2a8 data/gnkinetics/recipe/crafting/ring_gear.json
 9b2e4e9a87321e2e7b69da8ede6f5aee4167e997 data/gnkinetics/recipe/crafting/shaftless_andesite_cogwheel_from_conversion.json
 a6ada03a074e0079a92c7e5d8c6b3c2ad9f2c3ff data/gnkinetics/recipe/crafting/shaftless_brass_gear_from_conversion.json

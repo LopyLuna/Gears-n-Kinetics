@@ -1,0 +1,71 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made by LopyLuna",
+	"parent": "create:block/large_wheels",
+	"render_type": "minecraft:cutout",
+	"texture_size": [32, 32],
+	"textures": {
+		"2": "gnkinetics:block/brass_gear",
+		"3": "gnkinetics:block/binds",
+		"particle": "create:block/brass_block"
+	},
+	"elements": [
+		{
+			"name": "GearCaseInner",
+			"from": [3.9375, 9.9375, 3.9375],
+			"to": [12.0625, 14, 12.0625],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 10, 8]},
+			"faces": {
+				"north": {"uv": [13.5, 0, 15.5, 4], "rotation": 90, "texture": "#2"},
+				"east": {"uv": [13.5, 0, 15.5, 4], "rotation": 90, "texture": "#2"},
+				"south": {"uv": [13.5, 0, 15.5, 4], "rotation": 90, "texture": "#2"},
+				"west": {"uv": [13.5, 0, 15.5, 4], "rotation": 90, "texture": "#2"},
+				"up": {"uv": [9.5, 0, 13.5, 4], "rotation": 90, "texture": "#2"},
+				"down": {"uv": [9.5, 0, 13.5, 4], "rotation": 90, "texture": "#2"}
+			}
+		},
+		{
+			"from": [6, 10, -6.0625],
+			"to": [10, 13, 22.0625],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 11, 8]},
+			"faces": {
+				"north": {"uv": [14.66667, 3, 16, 4], "texture": "#3"},
+				"east": {"uv": [0, 4.66667, 9.33334, 5.66667], "texture": "#3"},
+				"south": {"uv": [14.66667, 3, 16, 4], "texture": "#3"},
+				"west": {"uv": [0, 4.66667, 9.33334, 5.66667], "texture": "#3"},
+				"up": {"uv": [0, 3, 9.33334, 4.33333], "rotation": 270, "texture": "#3"},
+				"down": {"uv": [0, 3, 9.33334, 4.33333], "rotation": 90, "texture": "#3"}
+			}
+		},
+		{
+			"from": [-6.0625, 10, 6],
+			"to": [22.0625, 13, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 11, 8]},
+			"faces": {
+				"north": {"uv": [0, 4.66667, 9.33334, 5.66667], "texture": "#3"},
+				"east": {"uv": [14.66667, 3, 16, 4], "texture": "#3"},
+				"south": {"uv": [0, 4.66667, 9.33334, 5.66667], "texture": "#3"},
+				"west": {"uv": [14.66667, 3, 16, 4], "texture": "#3"},
+				"up": {"uv": [0, 3, 9.33334, 4.33333], "texture": "#3"},
+				"down": {"uv": [0, 3, 9.33334, 4.33333], "texture": "#3"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "inserter",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "cogwheel",
+					"origin": [8, 8, 8],
+					"color": 0,
+					"children": [0]
+				}
+			]
+		},
+		1,
+		2
+	]
+}
