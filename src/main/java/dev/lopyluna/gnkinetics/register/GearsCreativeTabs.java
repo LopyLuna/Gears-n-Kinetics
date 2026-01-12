@@ -20,9 +20,9 @@ public class GearsCreativeTabs {
     public static void register() {}
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        //if (event.getTabKey().equals(GearsCreativeTabs.BASE_TAB.getKey()))
-        //    for (var entry : REG.getAll(Registries.ITEM))
-        //        if (entry.get() instanceof BurstPackageItem item)
-        //            event.remove(item.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        if (event.getTabKey().equals(GearsCreativeTabs.BASE_TAB.getKey())) {
+            //Hide unfinished blocks/items
+            event.remove(GearsBlocks.PLANETARY_GEAR.asStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
     }
 }
